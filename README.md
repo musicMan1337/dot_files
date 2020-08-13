@@ -19,4 +19,4 @@
 >     * ***The functionality of the search bar is pretty neat, and I'd highly recommend further reading on it.***
 
 ## Themes and Fluid Element Sizing:
-#######       I've adapted code written by **Indrek Paas https://gist.github.com/indrekpaas** he's got some other very clever Sass stuff as well.
+>I've adapted code written by **Indrek Paas https://gist.github.com/indrekpaas** he's got some other very clever Sass stuff as well.
