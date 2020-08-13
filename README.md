@@ -17,3 +17,6 @@
 >the .* icon (Use Regular Expression) and press the tiny ">" to the left of the
 >search field. In the next field, type \\\\$ and selct the (Replace All) button.
 >     * ***The functionality of the search bar is pretty neat, and I'd highly recommend further reading on it.***
+
+## Themes and Fluid Element Sizing:
+####       I've adapted code written by **Indrek Paas https://gist.github.com/indrekpaas**
