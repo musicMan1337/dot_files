@@ -1,9 +1,9 @@
 # VScode__User__Snippets
-JSON Snippets for use with various languages in VScode
+### JSON Snippets for use with various languages in VScode
 
-Will periodically update with new snippets I add, and any useful bits of info I gleen from the creation of snippets within the syntax of VScode JSON siles.
+###### Will periodically update with new snippets I add, and any useful bits of info I gleen from the creation of snippets within the syntax of VScode JSON siles.
 
-Quickly format large chunks of code for use within the JSON syntax:
+## Quickly format large chunks of code for use within the JSON syntax:
 -Normally, outside of the JSON file, select all (ctrl+A) and press (Shift+Alt+I) to select the last space on every line of code. Insert ", followed by the (Home) button twice (to select the first space of every line), and insert "
 
 A note on escape characters:
