@@ -5,7 +5,7 @@
 
 
 ## Quickly format large chunks of code for use within the JSON syntax:
--Normally, outside of the JSON file, select all (ctrl+A) and press (Shift+Alt+I)
+1. Normally, outside of the JSON file, select all (ctrl+A) and press (Shift+Alt+I)
 to select the last space on every line of code. Insert ", followed by the (Home)
 button twice (to select the first space of every line), and insert "
 
