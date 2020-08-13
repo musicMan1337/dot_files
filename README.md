@@ -16,4 +16,4 @@
 >2. If you highlight a single $ and press (Ctrl+F), within the searchbox, click
 >the .* icon (Use Regular Expression) and press the tiny ">" to the left of the
 >search field. In the next field, type \\\\$ and selct the (Replace All) button.
-  * *The functionality of the search bar is pretty neat, and I'd highly recommend further reading on it.*
+>    * *The functionality of the search bar is pretty neat, and I'd highly recommend further reading on it.*
