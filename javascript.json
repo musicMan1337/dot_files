@@ -15,10 +15,38 @@
   "template": {
     "prefix": "",
     "body": [
-      "console.log('$1');",
-      "$2"
+
     ],
     "description": "template"
+  },
+  "Comment Block": {
+    "prefix": "commentblock",
+    "body": [
+      "/*",
+      "|--------------------------------------------------------------------------",
+      "| ${1:BLOCK TITLE}",
+      "|--------------------------------------------------------------------------",
+      "|",
+      "| ${2:Start comment block here!}",
+      "*/",
+    ],
+    "description": "Comment Block"
+  },
+  "JSON Stringify": {
+    "prefix": "jsonstringify",
+    "body": [
+      "JSON.stringify(${1:object}, null, 2)",
+    ],
+    "description": "JSON Stringify"
+  },
+  "Function": {
+    "prefix": "function",
+    "body": [
+      "function ${1:name}(${2:params}) {",
+      "  $0",
+      "}",
+    ],
+    "description": "Function"
   },
   "slice()": {
     "prefix": "slice",
@@ -43,20 +71,108 @@
   },
   // *************************************** //
   // *************************************** //
+  // ************* API Calls *************** //
+  "Fetch API": {
+    "prefix": "apifetch",
+    "body": [
+      "function apiFetch(...args) {",
+      "  let error;",
+      "  return fetch(...args)",
+      "    .then(res => {",
+      "      if (!res.ok) {",
+      "        error = {code: res.status};",
+      "        if (!res.headers.get('content-type').includes('json')) {",
+      "          error.message = res.statusText;",
+      "          return Promise.reject(error);",
+      "        }",
+      "      }",
+      "      return res.json();",
+      "    })",
+      "    .then(data => {",
+      "      if (error) {",
+      "        error.message = data.message;",
+      "        return Promise.reject(error);",
+      "      }",
+      "      return data;",
+      "    });",
+      "};",
+    ],
+    "description": "Fetch API"
+  },
+  "GET API": {
+    "prefix": "apiget",
+    "body": [
+      "function get${1:Item}(${2:params}) {",
+      "  return apiFetch(`\\${BASE_URL}/${3:endpoint}`)",
+      "}",
+    ],
+    "description": "GET API"
+  },
+  "POST API": {
+    "prefix": "apipost",
+    "body": [
+      "function add${1:Item}(apiBody) {",
+      "  return apiFetch(`\\${BASE_URL}/${2:endpoint}`, {",
+      "    method: 'POST',",
+      "    headers: {",
+      "      'Content-Type': 'application/json',",
+      "    },",
+      "    body: apiBody",
+      "  })",
+      "}",
+    ],
+    "description": "POST API"
+  },
+  "PATCH API": {
+    "prefix": "apipatch",
+    "body": [
+      "function edit${1:Item}(apiBody, id) {",
+      "  return apiFetch(`\\${BASE_URL}/${2:endpoint}/${id}`, {",
+      "    method: 'PATCH',",
+      "    headers: {",
+      "      'Content-Type': 'application/json',",
+      "    },",
+      "    body: apiBody",
+      "  })",
+      "}",
+    ],
+    "description": "PATCH API"
+  },
+  "DELETE API": {
+    "prefix": "apidelete",
+    "body": [
+      "function delete${1:Item}(id) {",
+      "  return apiFetch(`\\${BASE_URL}/${2:endpoint}/${id}`, {",
+      "    method: 'DELETE',",
+      "  })",
+      "}",
+    ],
+    "description": "DELETE API"
+  },
+  // *************************************** //
+  // *************************************** //
   // ************** jQuery ***************** //
   "jQtemplate": {
     "prefix": "",
     "body": [
-      "console.log('$1');",
-      "$2"
+
     ],
     "description": "jQtemplate"
+  },
+  "On Trigger": {
+    "prefix": "jqon",
+    "body": [
+      "\\$('${1:selector}').on('${2:trigger}', '${3:target}', ${4:event} => {",
+      "  ${4:event}.preventDefault();",
+      "  $0",
+      "});",
+    ],
+    "description": "On Trigger"
   },
   "On Click": {
     "prefix": "jqclick",
     "body": [
-      "\\$('${1:selector}').click(${2:selector?}event => {",
-      "  event.preventDefault();",
+      "\\$('${1:selector}').click(${2:event} => {",
       "  $0",
       "});",
     ],
@@ -65,8 +181,8 @@
   "On Submit": {
     "prefix": "jqsubmit",
     "body": [
-      "\\$('${1:selector}').submit(event => {",
-      "  event.preventDefault();",
+      "\\$('${1:selector}').submit(${2:event} => {",
+      "  ${2:event}.preventDefault();",
       "  $0",
       "});",
     ],
@@ -81,7 +197,7 @@
       "const HtmlWebpackPlugin = require('html-webpack-plugin');",
       "",
       "module.exports = {",
-      "  entry: './src/index.js',",
+      "  entry: './src/scripts/index.js',",
       "  output: {",
       "    path: __dirname + '/dist',",
       "    filename: 'index_bundle.js'",
