@@ -1,0 +1,207 @@
+{
+  // Place your snippets for css here. Each snippet is defined under a snippet name and has a prefix, body and
+	// description. The prefix is what is used to trigger the snippet and the body will be expanded and inserted. Possible variables are:
+	// $1, $2 for tab stops, $0 for the final cursor position, and ${1:label}, ${2:another} for placeholders. Placeholders with the
+	// same ids are connected.
+  "Template": {
+    "prefix": "",
+    "body": [
+
+    ],
+    "description": "Template"
+  },
+  "Comment Block": {
+    "prefix": "commentblock",
+    "body": [
+      "  <!--",
+      "  |--------------------------------------------------------------------------",
+      "  | BLOCK TITLE",
+      "  |--------------------------------------------------------------------------",
+      "  |",
+      "  | Start comment block here!",
+      "  -->",
+    ],
+    "description": "Comment Block"
+  },
+  "HTML Section Divider": {
+    "prefix": "nsection",
+    "body": [
+      "<!-- - = == === === === === ===\\__New Section__|=== === === === === == = - -->",
+      ""
+    ],
+    "description": "HTML Section Divider"
+  },
+  // *************************************** //
+  // *************************************** //
+  // ******* Current Font Bank CDNs ******** //
+  "Font Bank": {
+    "prefix": "cdnfont",
+    "body": [
+      "  <!-- Font-Family CDNs -->",
+      "  <link href=\"https://fonts.googleapis.com/css2?family=BenchNine:wght@300;400;700&display=swap\" rel=\"stylesheet\">",
+      "  <link href=\"https://fonts.googleapis.com/css2?family=BenchNine:wght@300;400;700&display=swap\" rel=\"stylesheet\">",
+      "  <link href=\"https://fonts.googleapis.com/css2?family=Fira+Code:wght@300;400;500;600;700&display=swap\" rel=\"stylesheet\">",
+    ],
+    "description": "Font Bank"
+  },
+  // *************************************** //
+  // *************************************** //
+  // **************** CDNs ***************** //
+  "CDNTemplate": {
+    "prefix": "",
+    "body": [
+
+    ],
+    "description": "CDNTemplate"
+  },
+  "React CDN": {
+    "prefix": "cdnreact",
+    "body": [
+      "  <div id=\"application-root\"></div>",
+      "",
+      "  <script src=\"https://unpkg.com/babel-standalone@6/babel.min.js\"></script>",
+      "  <script src=\"https://unpkg.com/react@16/umd/react.development.js\"></script>",
+      "  <script src=\"https://unpkg.com/react-dom@16/umd/react-dom.development.js\"></script>",
+      "",
+      "  <script type=\"text/babel\">",
+      "",
+      "    ReactDOM.render(",
+      "    <App />,",
+      "    document.querySelector('#application-root')",
+      "  );",
+      "",
+      "  </script>",
+    ],
+    "description": "React CDN"
+  },
+  "Flickity CDN": {
+    "prefix": "cdnflick",
+    "body": [
+      "  <!-- Flickity -->",
+      "  <link rel=\"stylesheet\" href=\"https://unpkg.com/flickity@2/dist/flickity.min.css\">",
+      "  <!-- Flickity (place in body) -->",
+      "  <script src=\"https://unpkg.com/flickity@2/dist/flickity.pkgd.min.js\"></script>",
+    ],
+    "description": "Flickity CDN"
+  },
+  "FontAwesome CDN": {
+    "prefix": "cdnfontawesome",
+    "body": [
+      "  <!-- Font Awesome -->",
+      "  <!-- <script src=\"https://kit.fontawesome.com/77b02599af.js\" crossorigin=\"anonymous\"></script> -->",
+      "  <!-- Font Awesome SVG formatter (use with webpack install) -->",
+      "  <!-- <script src=\"https://use.fontawesome.com/releases/v5.14.0/js/all.js\" data-auto-replace-svg=\"nest\"></script> -->",
+    ],
+    "description": "FontAwesome CDN"
+  },
+  "jQuery-Modal CDN": {
+    "prefix": "cdnjqmodal",
+    "body": [
+      "  <!-- jQuery Modal CSS -->",
+      "  <!-- <link rel=\"stylesheet\" href=\"https://cdnjs.cloudflare.com/ajax/libs/jquery-modal/0.9.1/jquery.modal.min.css\"> -->",
+      "  <!-- jQuery Modal -->",
+      "  <!-- <script src=\"https://cdnjs.cloudflare.com/ajax/libs/jquery-modal/0.9.1/jquery.modal.min.js\"></script> -->",
+      "  <!-- jQuery Modal CSS (use with webpack install) -->",
+      "  <!-- <link rel=\"stylesheet\" href=\"https://cdnjs.cloudflare.com/ajax/libs/jquery-modal/0.9.2/jquery.modal.css\" integrity=\"sha512-JP49dvydjvdq6qd31grbdqIeExUyLFFIIneoetY/cJ+eQeJ6ok5HhaM4kQfIeQV4maAMGQ5kf4In3T7VKwMufg==\" crossorigin=\"anonymous\" /> -->",
+    ],
+    "description": "jQuery-Modal CDN"
+  },
+  "jQuery CDN": {
+    "prefix": "cdnjquery",
+    "body": [
+      "  <!-- jQuery -->",
+      "  <!-- <script src=\"https://code.jquery.com/jquery-3.5.1.js\" integrity=\"sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=\" crossorigin=\"anonymous\"></script> -->",
+    ],
+    "description": "jQuery CDN"
+  },
+  // *************************************** //
+  // *************************************** //
+  // ************ BOILERPLATE ************** //
+  "HTML Boilerplate": {
+    "prefix": "!",
+    "body": [
+      "<!DOCTYPE html>",
+      "<html lang=\"en\" class=\"winter\">",
+      "",
+      "<head>",
+      "  <meta charset=\"UTF-8\">",
+      "  <meta http-equiv=\"X-UA-Compatible\" content=\"IE=edge\">",
+      "  <meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">",
+      "  <title></title>",
+      "",
+      "  <!-- Font-Family CDNs -->",
+      "  <!-- <link href=\"https://fonts.googleapis.com/css2?family=BenchNine:wght@300;400;700&display=swap\" rel=\"stylesheet\"> -->",
+      "  <!-- <link href=\"https://fonts.googleapis.com/css2?family=BenchNine:wght@300;400;700&display=swap\" rel=\"stylesheet\"> -->",
+      "  <!-- <link href=\"https://fonts.googleapis.com/css2?family=Fira+Code:wght@300;400;500;600;700&display=swap\" rel=\"stylesheet\"> -->",
+      "",
+      "  <link rel=\"stylesheet\" href=\"/styles/pile/sassy.css\">",
+      "</head>",
+      "",
+      "<body>",
+      "",
+      "",
+      "",
+      "  <script src=\"/scripts/index.js\"></script>",
+      "</body>",
+      "",
+      "</html>",
+    ],
+    "description": "HTML Boilerplate"
+  },
+  "React Boilerplate": {
+    "prefix": "!r",
+    "body": [
+      "<!DOCTYPE html>",
+      "<html lang=\"en\">",
+      "",
+      "<head>",
+      "  <meta charset=\"utf-8\" />",
+      "  <link rel=\"icon\" href=\"%PUBLIC_URL%/favicon.ico\" />",
+      "  <meta name=\"viewport\" content=\"width=device-width, initial-scale=1\" />",
+      "  <meta name=\"theme-color\" content=\"#000000\" />",
+      "  <meta name=\"description\" content=\"Web site created using create-react-app\" />",
+      "  <link rel=\"manifest\" href=\"%PUBLIC_URL%/manifest.json\" />",
+      "  <title>React App</title>",
+      "",
+      "  <!-- Font-Family CDNs -->",
+      "  <link href=\"https://fonts.googleapis.com/css2?family=BenchNine:wght@300;400;700&display=swap\" rel=\"stylesheet\">",
+      "  <link href=\"https://fonts.googleapis.com/css2?family=BenchNine:wght@300;400;700&display=swap\" rel=\"stylesheet\">",
+      "  <link href=\"https://fonts.googleapis.com/css2?family=Fira+Code:wght@300;400;500;600;700&display=swap\"",
+      "    rel=\"stylesheet\">",
+      "</head>",
+      "",
+      "<body>",
+      "  <noscript>You need to enable JavaScript to run this app.</noscript>",
+      "  <div id=\"root\"></div>",
+      "</body>",
+      "",
+      "</html>",
+    ],
+    "description": "React Boilerplate"
+  },
+  "newPage.html": {
+    "prefix": "!!",
+    "body": [
+      "<!DOCTYPE html>",
+      "<html lang=\"en\">",
+      "",
+      "<head>",
+      "  <meta charset=\"UTF-8\">",
+      "  <meta http-equiv=\"X-UA-Compatible\" content=\"IE=edge\">",
+      "  <meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">",
+      "  <title></title>",
+      "",
+      "  <!-- <link rel=\"stylesheet\" href=\"/styles/pile/sassy.css\"> -->",
+      "</head>",
+      "",
+      "<body>",
+      "",
+      "",
+      "",
+      "</body>",
+      "",
+      "</html>",
+    ],
+    "description": "newPage.html"
+  },
+}

@@ -1,7 +1,7 @@
 {
-  // Place your snippets for javascript here. Each snippet is defined under a snippet name and has a prefix, body and 
+  // Place your snippets for javascript here. Each snippet is defined under a snippet name and has a prefix, body and
   // description. The prefix is what is used to trigger the snippet and the body will be expanded and inserted. Possible variables are:
-  // $1, $2 for tab stops, $0 for the final cursor position, and ${1:label}, ${2:another} for placeholders. Placeholders with the 
+  // $1, $2 for tab stops, $0 for the final cursor position, and ${1:label}, ${2:another} for placeholders. Placeholders with the
   // same ids are connected.
   // Example:
   // "Print to console": {
@@ -68,6 +68,77 @@
       "${1:condition} ? ${2:ifTrue} : ${3:ifFalse}",
     ],
     "description": "Ternary Operator"
+  },
+  // *************************************** //
+  // *************************************** //
+  // *************** REACT ***************** //
+  "reactTemplate": {
+    "prefix": "",
+    "body": [
+
+    ],
+    "description": "reactTemplate"
+  },
+  "Key Prop": {
+    "prefix": "key",
+    "body": [
+      "key={$1}$0"
+    ],
+    "description": "Key Prop"
+  },
+  "onClick": {
+    "prefix": "onclick",
+    "body": [
+      "onClick={() => ${1:function}($2)}$0"
+    ],
+    "description": "onClick"
+  },
+  "Import Parent": {
+    "prefix": "impp",
+    "body": [
+      "import ${1:Parent} from '../${1:Parent}';$0"
+    ],
+    "description": "Import Parent"
+  },
+  "Import Sibling": {
+    "prefix": "imps",
+    "body": [
+      "import ${1:Sibling} from './${1:Sibling}';$0"
+    ],
+    "description": "Import Sibling"
+  },
+  "Import Component": {
+    "prefix": "impc",
+    "body": [
+      "import ${1:Component} from './component/${1:Component}';$0"
+    ],
+    "description": "Import Component"
+  },
+  "React Boilerplate": {
+    "prefix": "!react",
+    "body": [
+      "// == index.js == //",
+      "import React from 'react';",
+      "import ReactDOM from 'react-dom';",
+      "import App from './App';",
+      "import './styles/sassy.scss';",
+      "",
+      "ReactDOM.render(<App />, document.getElementById('root'));",
+      "",
+      "// == App.js == //",
+      "import React from 'react';",
+      "",
+      "function App() {",
+      "  return (",
+      "    <main className='App'>",
+      "      {/* content goes here */}",
+      "    </main>",
+      "  );",
+      "}",
+      "",
+      "export default App;",
+    ],
+    "description": "React Boilerplate"
   },
   // *************************************** //
   // *************************************** //
