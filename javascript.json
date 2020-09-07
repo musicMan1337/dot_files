@@ -19,6 +19,23 @@
     ],
     "description": "template"
   },
+  "Const Function": {
+    "prefix": "cfunction",
+    "body": [
+      "const ${1:name} = ($2) => {$0}",
+    ],
+    "description": "Const Function"
+  },
+  "Const Promise": {
+    "prefix": "promise",
+    "body": [
+      "const ${1:name} = new Promise((resolve, reject) => {",
+      "  console.log('${1:name} Promise Start');",
+      "  $0",
+      "});"
+    ],
+    "description": "Const Promise"
+  },
   "Comment Block": {
     "prefix": "commentblock",
     "body": [
@@ -71,6 +88,58 @@
   },
   // *************************************** //
   // *************************************** //
+  // ********** REACT PropTypes ************ //
+  "PropTypeTemplate": {
+    "prefix": "",
+    "body": [
+
+    ],
+    "description": "PropTypeTemplate"
+  },
+  "PTC Custom": {
+    "prefix": "ptccustom",
+    "body": [
+      "  ${1:prop}: (props, ${1:prop}) => {",
+      "    const prop = props[${1:prop}];",
+      "    //isRequired check",
+      "    if(!prop) {",
+      "      return new Error(`\"${1:prop}\" is required in ${2:componentName}.js ~ Validation Failed`);",
+      "    };",
+      "    // check type",
+      "    if (typeof prop != '${3:typeOf}') {",
+      "      return new Error(`Invalid prop => \\${prop} is expected to be a \"${3:typeOf}\" in ${2:componentName}.js ~ \\${typeof prop} found.`);",
+      "    };",
+      "    // custom check",
+      "    if(==> stuff <==) {",
+      "      return new Error(`Invalid prop => \\${prop} should be ==> stuff <== in ${2:componentName}.js ~ \\${prop} found.`);",
+      "    };",
+      "  },",
+    ],
+    "description": "PTC Custom"
+  },
+  "PTC URL": {
+    "prefix": "ptcurl",
+    "body": [
+      "  ${1:url}: (props, ${1:url}) => {",
+      "    const prop = props[url];",
+      "    //isRequired check",
+      "    if(!prop) {",
+      "      return new Error(`\"${1:url}\" is required in ${2:componentName}.js ~ Validation Failed`);",
+      "    };",
+      "    // check type",
+      "    if (typeof prop != 'string') {",
+      "      return new Error(`Invalid prop => \\${prop} is expected to be a \"string\" in ${2:componentName}.js ~ \\${typeof prop} found.`);",
+      "    };",
+      "    // custom check url format",
+      "    if (prop.length < 5 || !prop.match(new RegExp(/^https?:\\/\\//))) {",
+      "      return new Error(`Invalid prop => \\${prop} must be min length 5 and begin \"http(s)://\" in ${2:componentName}.js ~ Validation Failed.`);",
+      "    };",
+      "  },",
+    ],
+    "description": "PTC URL"
+  },
+  // *************************************** //
+  // *************************************** //
   // *************** REACT ***************** //
   "reactTemplate": {
     "prefix": "",
@@ -78,6 +147,16 @@
 
     ],
     "description": "reactTemplate"
+  },
+  "Enzyme Setup": {
+    "prefix": "impenzyme",
+    "body": [
+      "import { configure } from 'enzyme';",
+      "import Adapter from 'enzyme-adapter-react-16';",
+      "",
+      "configure({ adapter: new Adapter() });",
+    ],
+    "description": "Enzyme Setup"
   },
   "Key Prop": {
     "prefix": "key",
@@ -89,9 +168,30 @@
   "onClick": {
     "prefix": "onclick",
     "body": [
-      "onClick={() => ${1:function}($2)}$0"
+      "onClick={() => ${1:function}}$0"
     ],
     "description": "onClick"
+  },
+  "onChange": {
+    "prefix": "onchange",
+    "body": [
+      "onChange={e => ${1:function}(e.target.value)}$0"
+    ],
+    "description": "onChange"
+  },
+  "onSubmit": {
+    "prefix": "onsubmit",
+    "body": [
+      "onSubmit={e => ${1:function}(e, ${2:formData})}$0"
+    ],
+    "description": "onSubmit"
+  },
+  "Import Child": {
+    "prefix": "impch",
+    "body": [
+      "import ${2:Child} from './${1:folder}/${2:Child}';$0"
+    ],
+    "description": "Import Child"
   },
   "Import Parent": {
     "prefix": "impp",
@@ -110,35 +210,58 @@
   "Import Component": {
     "prefix": "impc",
     "body": [
-      "import ${1:Component} from './component/${1:Component}';$0"
+      "import ${1:Component} from './components/${1:Component}';$0"
     ],
     "description": "Import Component"
   },
-  "React Boilerplate": {
-    "prefix": "!react",
+  "Index React": {
+    "prefix": "!index",
     "body": [
-      "// == index.js == //",
       "import React from 'react';",
       "import ReactDOM from 'react-dom';",
+      "import './styles/global.scss';",
       "import App from './App';",
-      "import './styles/sassy.scss';",
       "",
-      "ReactDOM.render(<App />, document.getElementById('root'));",
+      "ReactDOM.render(<App />, document.getElementById('root'))",
+    ],
+    "description": "Index React"
+  },
+  "Router Index React": {
+    "prefix": "!router",
+    "body": [
+      "import React from 'react';",
+      "import ReactDOM from 'react-dom';",
+      "import './styles/global.scss';",
+      "import { BrowserRouter } from 'react-router-dom';",
+      "import App from './App';",
       "",
-      "// == App.js == //",
+      "ReactDOM.render(",
+      "  <BrowserRouter>",
+      "    <App />",
+      "  </BrowserRouter>,",
+      "  document.getElementById('root')",
+      ");",
+    ],
+    "description": "Router Index React"
+  },
+  "App React": {
+    "prefix": "!app",
+    "body": [
       "import React from 'react';",
       "",
-      "function App() {",
+      "const App = () => {",
+      "  const stuffHere = 'WOW!!!';",
+      "",
       "  return (",
-      "    <main className='App'>",
-      "      {/* content goes here */}",
+      "    <main className=\"App\">",
+      "      {stuffHere}",
       "    </main>",
       "  );",
-      "}",
+      "};",
       "",
       "export default App;",
     ],
-    "description": "React Boilerplate"
+    "description": "App React"
   },
   // *************************************** //
   // *************************************** //

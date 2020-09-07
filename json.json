@@ -19,12 +19,56 @@
     ],
 		"description": "template"
   },
-	"Deploy GH-Pages": {
-		"prefix": "deploy",
+	"vercel.json": {
+		"prefix": "!v",
 		"body": [
-      "\"deploy\": \"gh-pages -d build\""
+      "{",
+      "  \"version\": 2,",
+      "  \"routes\": [",
+      "      { \"handle\": \"filesystem\" },",
+      "      { \"src\": \"/.*\", \"dest\": \"/index.html\" }",
+      "  ]",
+      "}"
+    ],
+		"description": "vercel.json"
+  },
+	"Pre-Build": {
+		"prefix": "prebuild",
+		"body": [
+      "\"prebuild\": \"CI=true react-scripts test --colors\","
+    ],
+		"description": "Pre-Build"
+  },
+	"Serve": {
+		"prefix": "serve",
+		"body": [
+      "\"preserve\": \"npm run build\",",
+      "\"serve\": \"serve -s build\","
+    ],
+		"description": "Serve"
+  },
+	"Deploy GH-Pages": {
+		"prefix": "deploygh",
+		"body": [
+      "\"predeployGH\": \"npm run build\",",
+      "\"deployGH\": \"gh-pages -d build\","
     ],
 		"description": "Deploy GH-Pages"
+  },
+	"Deploy Vercel": {
+		"prefix": "deployv",
+		"body": [
+      "\"predeployV\": \"npm run build\",",
+      "\"deployV\": \"gh-pages -d build\","
+    ],
+		"description": "Deploy Vercel"
+  },
+	"ESLint": {
+		"prefix": "lint",
+		"body": [
+      "\"lint\": \"eslint .\","
+    ],
+		"description": "ESLint"
   },
 	"React Manifest Boilerplate": {
 		"prefix": "!",

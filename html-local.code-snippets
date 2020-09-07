@@ -10,13 +10,6 @@
     ],
 		"description": "template"
   },
-  "New React Cleanup": {
-		"prefix": "rclean",
-		"body": [
-      "GLOBIGNORE=index.html:manifest.json && touch packages.md && cd public/ && rm -v * && cd .. && cd src/ && rm -v * && touch index.js && touch App.js && mkdir styles && cd styles/ && touch sassy.scss && cd .. && cd .. && unset GLOBIGNORE"
-    ],
-		"description": "New React Cleanup"
-  },
   "Lorem Picsum": {
 		"prefix": "lorempicsum",
 		"body": [
@@ -33,35 +26,70 @@
   },
   // *************************************** //
   // *************************************** //
+  // ************* ES Lint ***************** //
+	"lintTemplate": {
+		"prefix": "",
+		"body": [
+
+    ],
+		"description": "lintTemplate"
+  },
+	".eslintIgnore": {
+		"prefix": "lintignore",
+		"body": [
+      "# REACT Folders/Files",
+      "build",
+      "node_modules",
+      "public",
+      "*.json",
+      "*.md",
+      "*.test.js",
+      "",
+      "# ON/OFF switch",
+      "*",
+    ],
+		"description": ".eslintIgnore"
+  },
+	".eslintrc.yaml": {
+		"prefix": "lintrc",
+		"body": [
+      "parserOptions:",
+      "  ecmaVersion: 6",
+      "env:",
+      "  browser: true",
+      "  node: true",
+      "extends:",
+      "  - eslint-config-airbnb",
+      "  - airbnb",
+      "  - airbnb/hooks",
+      "rules:",
+      "  prefer-stateless-function: off",
+      "  linebreak-style: off",
+      "  react/jsx-filename-extension: [0]",
+      "  import/extensions: off",
+      "  comma-dangle: 0",
+      "  no-trailing-spaces: off",
+      "plugins:",
+      "  - react",
+      "  - import",
+      "settings:",
+      "  import/parser: babel-eslint",
+      "  import/resolve:",
+      "    moduleDirectory:",
+      "      - node_modules",
+      "      - src",
+    ],
+		"description": ".eslintrc.yaml"
+  },
+  // *************************************** //
+  // *************************************** //
   // ************** NPM ******************** //
-	"NPM WebPack": {
-		"prefix": "npmwebpack",
+  "npmTemplate": {
+		"prefix": "",
 		"body": [
-      "==> WEBPACK <==",
-      "npm install --save-dev webpack webpack-cli webpack-dev-server html-webpack-plugin style-loader css-loader file-loader",
+
     ],
-		"description": "NPM WebPack"
-  },
-	"NPM React": {
-		"prefix": "npmReact",
-		"body": [
-      "==> REACT <==",
-      "npm install react-test-renderer -D",
-    ],
-		"description": "NPM React"
-  },
-	"React Scripts": {
-		"prefix": "npmscriptsreact",
-		"body": [
-      "  ==> REACT <==",
-      "  \"scripts\": {",
-      "    \"start\": \"react-scripts start\",",
-      "    \"build\": \"react-scripts build\"",
-      "    \"test\": \"react-scripts test\",",
-      "    \"eject\": \"react-scripts eject\",",
-      "  },",
-    ],
-		"description": "React Scripts"
+		"description": "npmTemplate"
   },
 	"Webpack Scripts": {
 		"prefix": "npmscriptswebpack",
