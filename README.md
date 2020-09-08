@@ -79,10 +79,11 @@
 
 # gitBash || WSL-Ubuntu || hereDocs
 ### First you get the money, then you get the [*powerlevel10k...*][p10k]
+<img src="images/p10k.png" alt="Logo" >
 
 ###### *I won't get into the specifics on setting up WSL here, but know that I personal run Ubuntu on my local Network, using oh-my-zsh terminal and the powerlevel10k theme.  That said, shell-specific scripts will need minor tweaking depending on your own personal dev environment!*
 
-## Aliases:
+## Shell Aliases:
 >---
 >##### An alias is basically a variable that you can assign a shell script to, then run it in the terminal. For example:
 >```
@@ -139,7 +140,7 @@
 >```
 >echo I\'m a super useful hereDoc!
 >```
-> *...in terminal...*
+> *...in terminal, invoke with shell name...*
 >```
 >  $ bash ~/hereDocs/test.txt
 > I'm a super useful hereDoc!
@@ -161,9 +162,8 @@
 >  $ bash test.txt
 >  $_
 >```
->* ###### This will have created a new index.js file loaded with boilerplate - you can see how this can be abused for some incredibly powerful use cases! If you'd like an example, look in ubuntu
->> ###### *Note your .bashrc should be located in your root directory (cd ~). If by chance it doesn't exist, just create one!*
->> ###### *Also, these are just very basic use cases, and there ar many advanced ways to create scripts such as using functions, combining scripts, using variables, and much more...*
+>* ###### This will have created a new index.js file loaded with boilerplate - you can see how this can be abused for some incredibly powerful use cases! If you'd like an example, [look at my aliases][aliases] and checkout "srclean" - this deletes all the files in creat-react-app and repopulates them with fresh files via hereDocs in under 1 second!
+>> ###### *Note that this hardly scratches the surface of Here Docs, so if you'd like to learn more... [Explore the docs! »][hdoc-guide]*
 >---
 ---
 <!-- CONTRIBUTING -->
@@ -196,6 +196,7 @@ Contributions are what make the open source community such an amazing place to b
 
 
 <!-- MARKDOWN LINKS & IMAGES -->
+
 <!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
 [contributors-shield]: https://img.shields.io/github/contributors/musicMan1337/Snippets_n_Scripts.svg?style=flat-square
 [contributors-url]: https://github.com/musicMan1337/Snippets_n_Scripts/graphs/contributors
@@ -209,38 +210,12 @@ Contributions are what make the open source community such an amazing place to b
 [license-url]: https://github.com/musicMan1337/Snippets_n_Scripts/blob/master/LICENSE.txt
 [linkedin-shield]: https://img.shields.io/badge/-LinkedIn-black.svg?style=flat-square&logo=linkedin&colorB=555
 [linkedin-url]: www.linkedin.com/in/derek-8bit-nellis
-[product-screenshot]: images/screenshot.png
+[product-screenshot]: images/p10k.png
+
+<!-- project links -->
 [p10k]: https://github.com/romkatv/powerlevel10k
 [hdoc-guide]: https://tldp.org/LDP/abs/html/here-docs.html
-
-<!--
-[![alt text][twitter.1]][twitter]
-[![alt text][facebook.1]][facebook]
-[![alt text][googlePlus.1]][googlePlus]
-[![alt text][tumblr.1]][tumblr]
-[![alt text][dribble.1]][dribble]
-[![alt text][github.1]][github]
->>->
-
-
-<!-- social media icons -->
-
-<!-- icons with padding -->
-[twitter.1]: http://i.imgur.com/tXSoThF.png (twitter icon with padding)
-[facebook.1]: http://i.imgur.com/P3YfQoD.png (facebook icon with padding)
-[googlePlus.1]: http://i.imgur.com/yCsTjba.png (google plus icon with padding)
-[tumblr.1]: http://i.imgur.com/YckIOms.png (tumblr icon with padding)
-[dribble.1]: http://i.imgur.com/1AGmwO3.png (dribbble icon with padding)
-[github.1]: http://i.imgur.com/0o48UoR.png (github icon with padding)
-
-<!-- icons without padding -->
-[twitter.2]: http://i.imgur.com/wWzX9uB.png (twitter icon without padding)
-[facebook.2]: http://i.imgur.com/fep1WsG.png (facebook icon without padding)
-[3.2]: http://i.imgur.com/VlgBKQ9.png (google plus icon without padding)
-[tumblr.2]: http://i.imgur.com/jDRp47c.png (tumblr icon without padding)
-[dribble.2]: http://i.imgur.com/Vvy3Kru.png (dribbble icon without padding)
-[github.2]: http://i.imgur.com/9I6NRUm.png (github icon without padding)
-
+[aliases]: https://github.com/musicMan1337/Snippets_n_Scripts/blob/master/ubuntu_zsh_scripts/aliases.zsh
 
 <!-- links to social media accounts -->
 [twitter]: http://www.twitter.com/userName

@@ -6,10 +6,7 @@ alias ...='cd ../../'
 alias .3='cd ../../../'
 alias .4='cd ../../../../'
 alias .5='cd ../../../../..'
-alias calias='code ~/.oh-my-zsh/custom/aliases.zsh'
-alias cec='code ~/.gitconfig'
-alias czsh='code ~/.zshrc'
-alias cp10k='code ~/.p10k.zsh'
+alias calias='code ~/.bashrc'
 alias exp='explorer.exe .'
 
 # NPM Stuff
@@ -68,46 +65,16 @@ ncc2() {
 
 # Global hereDocs
 # ==> for react cleanup <==
-alias indexhtml='zsh /mnt/c/Users/admin/hereDocs/reactClean/indexhtml.txt'
-alias manifestjson='zsh /mnt/c/Users/admin/hereDocs/reactClean/manifestjson.txt'
-alias indexjs='zsh /mnt/c/Users/admin/hereDocs/reactClean/indexjs.txt'
-alias Appjs='zsh /mnt/c/Users/admin/hereDocs/reactClean/Appjs.txt'
-alias setupTestsjs='zsh /mnt/c/Users/admin/hereDocs/reactClean/setupTestsjs.txt'
-alias globalscss='zsh /mnt/c/Users/admin/hereDocs/reactClean/globalscss.txt'
+alias indexhtml='bash ~/hereDocs/reactClean/indexhtml.txt'
+alias manifestjson='bash ~/hereDocs/reactClean/manifestjson.txt'
+alias indexjs='bash ~/hereDocs/reactClean/indexjs.txt'
+alias Appjs='bash ~/hereDocs/reactClean/Appjs.txt'
+alias setupTestsjs='bash ~/hereDocs/reactClean/setupTestsjs.txt'
+alias globalscss='bash ~/hereDocs/reactClean/globalscss.txt'
 alias srFileGenerator='indexhtml && manifestjson && indexjs && Appjs && setupTestsjs && globalscss'
 
 # Logos/Icons/Other Stuff
-alias mammothHead='cp /mnt/c/Users/admin/logo-head.ico'
-alias loadMessage='/mnt/c/Users/admin/hereDocs/asciiArt/loadMessage.txt'
-
-# Snippets_n_Scripts repo update
-# ==> shell stuff <==
-alias zAliases='cp ~/.oh-my-zsh/custom/aliases.zsh .'
-alias zGitconfig='cp ~/.gitconfig .'
-alias bAliases='cp /mnt/c/Users/admin/.bashrc .'
-alias bGitconfig='cp /mnt/c/Users/admin/.gitconfig .'
-# ==> VScode snippets <==
-alias globalJson='cp /mnt/c/Users/admin/AppData/Roaming/Code/User/snippets/html-local.code-snippets .'
-alias htmlJson='cp /mnt/c/Users/admin/AppData/Roaming/Code/User/snippets/html.json .'
-alias jsJson='cp /mnt/c/Users/admin/AppData/Roaming/Code/User/snippets/javascript.json .'
-alias scssJson='cp /mnt/c/Users/admin/AppData/Roaming/Code/User/snippets/scss.json .'
-alias jsonJson='cp /mnt/c/Users/admin/AppData/Roaming/Code/User/snippets/json.json .'
-alias mdJson='cp /mnt/c/Users/admin/AppData/Roaming/Code/User/snippets/markdown.json .'
-# ==> repo <==
-alias snippets='/mnt/e/Code/Snippets_Aliases_andMore/VScode_Snippets'
-alias zScripts='/mnt/e/Code/Snippets_Aliases_andMore/ubuntu_zsh_scripts'
-alias bScripts='/mnt/e/Code/Snippets_Aliases_andMore/win10_bash_scripts'
-# ==> target repo <==
-alias vSnippets='cd /mnt/e/Code/Snippets_Aliases_andMore/VScode_Snippets'
-alias zScripts='cd /mnt/e/Code/Snippets_Aliases_andMore/ubuntu_zsh_scripts'
-alias bScripts='cd /mnt/e/Code/Snippets_Aliases_andMore/win10_bash_scripts'
-# ==> mega updater <==
-snsupdate ()
-{
-  zScripts && zAliases ; zGitconfig ;
-  bScripts && bAliases ; bGitconfig ;
-  vSnippets && globalJson ; htmlJson; jsJson ; scssJson ; jsonJson ; mdJson ;
-  .. && git save && git push
-}
+alias mammothHead='cp ~/logo-head.ico'
+alias loadMessage='bash ~/hereDocs/asciiArt/loadMessage.txt'
 
 loadMessage
