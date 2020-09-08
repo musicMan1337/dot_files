@@ -15,26 +15,25 @@
 <!-- PROJECT LOGO -->
 <br />
 <p align="center">
-  <a href="https://github.com/musicMan1337/repo">
-    <img src="images/logo.png" alt="Logo" width="80" height="80">
+  <a href="https://github.com/musicMan1337/Snippets_n_Scripts">
+    <img src="images/8bit_mammoth_logo.png" alt="Logo" width="100" height="100">
   </a>
 
-  <h3 align="center">repo</h3>
+  <h3 align="center">Snippets 'n' Aliases</h3>
 
   <p align="center">
-    An awesome README template to jumpstart your projects!
+    My personal dumping ground for my secrets to optimal laziness!
     <br />
-    <a href="https://github.com/musicMan1337/repo"><strong>Explore the docs »</strong></a>
+    <a href="https://github.com/musicMan1337/Snippets_n_Scripts"><strong>Explore the docs »</strong></a>
     <br />
     <br />
-    <a href="https://github.com/musicMan1337/repo">View Demo</a>
+    <a href="https://github.com/musicMan1337/Snippets_n_Scripts/issues">Report Bug</a>
     ·
-    <a href="https://github.com/musicMan1337/repo/issues">Report Bug</a>
-    ·
-    <a href="https://github.com/musicMan1337/repo/issues">Request Feature</a>
+    <a href="https://github.com/musicMan1337/Snippets_n_Scripts/issues">Request Feature?</a>
   </p>
 </p>
 
+---
 <!-- About The Project -->
 # VScode__User__Snippets
 ### JSON Snippets for use with various languages in VScode
@@ -42,27 +41,131 @@
 ###### *Will periodically update with new snippets I add, and any useful bits of info I gleen from the creation of snippets within the syntax of VScode JSON files.*
 
 
-## Quickly format large chunks of code for use within the JSON syntax:
->1. Normally, outside of the JSON file, select all (ctrl+A) and press (Shift+Alt+I)
->to select the last space on every line of code. Insert ", followed by the (Home)
->button twice (to select the first space of every line), and insert "
+## Quickly format large chunks of code into JSON syntax:
+>---
+>##### Outside of the JSON snippet file, highlight the code to be converted and press (Shift+Alt+I) to select the last space on every line of code. Insert (",) followed by the *Home button twice (to select the first space of every line), and insert (")
+>```
+>char mander[16] = {
+>  evolve: true
+>};
+>```
+>###### *...into...*
+>```
+>"char mander[16] = {",
+>"  evolve: true",
+>"};",
+>```
+>
+>---
+>
+>#### *A note on escape characters:*
+>
+>```
+>"@mixin theme($properties, $key) {",       // bad
+>...
+>"@mixin theme(\\$properties, \\$key) {",   // good, good...
+>```
+>##### For some cases, I wanted to create snippets with the "\$" character, but within the JSON syntax it registers as a pointer followed by placeholder text. A normal escape (\\) won't work, instead you have to do this: \\\\$
+>* ##### If you highlight a single "\$" and press (Ctrl+F), within the searchbox, press the tiny ">" to the left of the search field. In the next field, type \\$ and select the (Replace All) button.
+>> ###### *The functionality of the search bar is incredibly powerful, and I'd highly recommend further reading on it.*
+>---
 
-## A note on escape characters:
->1. For Sass, I wanted to create snippets with the $ character, but within the
->JSON syntax it registers as a pointer followed by placeholder text. A normal
->escape (\\) won't work, instead you have to do this: \\\\$
->2. If you highlight a single $ and press (Ctrl+F), within the searchbox, click
->the .* icon (Use Regular Expression) and press the tiny ">" to the left of the
->search field. In the next field, type \\\\$ and selct the (Replace All) button.
->     * ***The functionality of the search bar is pretty neat, and I'd highly recommend further reading on it.***
+## Sass Themes and Fluid Element Sizing:
+>---
+>##### I've adapted code written by **Indrek Paas https://gist.github.com/indrekpaas** he's got some other very clever Sass stuff as well.
+>
+>---
+---
 
-## Themes and Fluid Element Sizing:
->I've adapted code written by **Indrek Paas https://gist.github.com/indrekpaas** he's got some other very clever Sass stuff as well.
+# gitBash || WSL-Ubuntu || hereDocs
+### First you get the money, then you get the [*powerlevel10k...*][p10k]
 
+###### *I won't get into the specifics on setting up WSL here, but know that I personal run Ubuntu on my local Network, using oh-my-zsh terminal and the powerlevel10k theme.  That said, shell-specific scripts will need minor tweaking depending on your own personal dev environment!*
 
+## Aliases:
+>---
+>##### An alias is basically a variable that you can assign a shell script to, then run it in the terminal. For example:
+>```
+>alias test1='echo Im an idiot!"
+>```
+>###### *...ran in terminal...*
+>```
+>  $ test1
+> Youre an idiot!
+>  $_
+>```
+>##### You can create aliases mainly two ways:
+>1. In the terminal, for a temporary alias:
+>```
+>  $ alias test2='echo I wont last long...'
+>```
+>2. In your .bashrc file, for a permanent alias:
+>```
+> alias test2='echo But I will...'
+>```
+>> ###### *Note your .bashrc should be located in your root directory (cd ~). If by chance it doesn't exist, just create one!*
+>---
 
+## Git Aliases:
+>---
+>>###### *Git aliases function the same way as shell aliases, but have somewhat different syntax. You could technically create shell aliases to do the same thing, though I personally like separating git and shell aliases.*
+>##### You can create git aliases in your .gitconfig file located in your rootdirectory. It should have been created and filled with some stuff after using git for the first time, but if it's not there you can always create your own .gitconfig from scratch.
+>* ##### In your .gitconfig file, create aliases in the designated area:
+>```
+>[alias]
+>...
+>  rv = remote --v
+>```
+>* ##### You can then invoke the git-specific alias in the terminal:
+>```
+>  $ git rv
+> origin  https://github.com/user/repo.git (fetch)
+> origin  https://github.com/user/repo.git (push)
+>  $_
+>```
+>> ###### *Note your .bashrc should be located in your root directory (cd ~). If by chance it doesn't exist, just create one!*
+>> ###### *Also, these are just very basic use cases, and there ar many advanced ways to create scripts such as using functions, combining scripts, using variables, and much more...*
+>---
 
-
+## Here Docs:
+*(are OP...)*
+>---
+>>###### *Here Docs are fairly complex, but on the surface level they are basically just fields of text that can either run complex scripts or create new files populated with said text.*
+>##### 1. I'd suggest creating a folder specifically for your hereDocs in your root directory, and treat the folder itself as a type of .bashrc file, where your "aliases" are actually hereDoc files.
+>##### 2. The easiest way to create a hereDoc is to create a new .txt file (testDoc.txt)
+>>###### *Note that hereDocs don't need to strictly be .txt, nor are there naming conventions for the file name. Basically, you just need to be able to edit the text within the file*
+>##### 3. Let's create 2 simple hereDocs - create test.txt then open:
+>* ###### For running a script, the file itself acts like an alias:
+>```
+>echo I\'m a super useful hereDoc!
+>```
+> *...in terminal...*
+>```
+>  $ bash ~/hereDocs/test.txt
+> I'm a super useful hereDoc!
+>  $_
+>```
+>* ###### For generating a new file, you'll need to use "delimiters" (here it's "EOS", but it could be anything as long as the match) to wrap the body of your doc, prefaced by a command. In this case, since we aren't running scripts at the end, we only need an opening delimiter:
+>```
+>>./index.js<<'EOS'
+>import React from 'react';
+>import ReactDOM from 'react-dom';
+>import './styles/global.scss';
+>import App from './App';
+>
+>ReactDOM.render(<App />, document.getElementById('root'))
+>```
+> *...in terminal, cd into hereDocs folder...*
+>```
+>  $ cd ~/hereDocs
+>  $ bash test.txt
+>  $_
+>```
+>* ###### This will have created a new index.js file loaded with boilerplate - you can see how this can be abused for some incredibly powerful use cases! If you'd like an example, look in ubuntu
+>> ###### *Note your .bashrc should be located in your root directory (cd ~). If by chance it doesn't exist, just create one!*
+>> ###### *Also, these are just very basic use cases, and there ar many advanced ways to create scripts such as using functions, combining scripts, using variables, and much more...*
+>---
+---
 <!-- CONTRIBUTING -->
 ## Contributing
 
@@ -78,12 +181,12 @@ Contributions are what make the open source community such an amazing place to b
 
 
 <!-- CONTACT -->
+---
 ## Contact
 
-Your Name - [@your_twitter](https://twitter.com/your_username) - email@example.com
-
-Project Link: [https://github.com/your_username/repo_name](https://github.com/your_username/repo_name)
-
+#### Facebook - [Derek Nellis][facebook]
+#### Instagram - [@derek.8bit.nellis][instagram]
+#### Github - [musicMan1337][github]
 
 
 
@@ -94,16 +197,56 @@ Project Link: [https://github.com/your_username/repo_name](https://github.com/yo
 
 <!-- MARKDOWN LINKS & IMAGES -->
 <!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
-[contributors-shield]: https://img.shields.io/github/contributors/musicMan1337/repo.svg?style=flat-square
-[contributors-url]: https://github.com/musicMan1337/repo/graphs/contributors
-[forks-shield]: https://img.shields.io/github/forks/musicMan1337/repo.svg?style=flat-square
-[forks-url]: https://github.com/musicMan1337/repo/network/members
-[stars-shield]: https://img.shields.io/github/stars/musicMan1337/repo.svg?style=flat-square
-[stars-url]: https://github.com/musicMan1337/repo/stargazers
-[issues-shield]: https://img.shields.io/github/issues/musicMan1337/repo.svg?style=flat-square
-[issues-url]: https://github.com/musicMan1337/repo/issues
-[license-shield]: https://img.shields.io/github/license/musicMan1337/repo.svg?style=flat-square
-[license-url]: https://github.com/musicMan1337/repo/blob/master/LICENSE.txt
+[contributors-shield]: https://img.shields.io/github/contributors/musicMan1337/Snippets_n_Scripts.svg?style=flat-square
+[contributors-url]: https://github.com/musicMan1337/Snippets_n_Scripts/graphs/contributors
+[forks-shield]: https://img.shields.io/github/forks/musicMan1337/Snippets_n_Scripts.svg?style=flat-square
+[forks-url]: https://github.com/musicMan1337/Snippets_n_Scripts/network/members
+[stars-shield]: https://img.shields.io/github/stars/musicMan1337/Snippets_n_Scripts.svg?style=flat-square
+[stars-url]: https://github.com/musicMan1337/Snippets_n_Scripts/stargazers
+[issues-shield]: https://img.shields.io/github/issues/musicMan1337/Snippets_n_Scripts.svg?style=flat-square
+[issues-url]: https://github.com/musicMan1337/Snippets_n_Scripts/issues
+[license-shield]: https://img.shields.io/github/license/musicMan1337/Snippets_n_Scripts.svg?style=flat-square
+[license-url]: https://github.com/musicMan1337/Snippets_n_Scripts/blob/master/LICENSE.txt
 [linkedin-shield]: https://img.shields.io/badge/-LinkedIn-black.svg?style=flat-square&logo=linkedin&colorB=555
-<!-- [linkedin-url]: https://linkedin.com/in/musicMan1337 -->
+[linkedin-url]: www.linkedin.com/in/derek-8bit-nellis
 [product-screenshot]: images/screenshot.png
+[p10k]: https://github.com/romkatv/powerlevel10k
+[hdoc-guide]: https://tldp.org/LDP/abs/html/here-docs.html
+
+<!--
+[![alt text][twitter.1]][twitter]
+[![alt text][facebook.1]][facebook]
+[![alt text][googlePlus.1]][googlePlus]
+[![alt text][tumblr.1]][tumblr]
+[![alt text][dribble.1]][dribble]
+[![alt text][github.1]][github]
+>>->
+
+
+<!-- social media icons -->
+
+<!-- icons with padding -->
+[twitter.1]: http://i.imgur.com/tXSoThF.png (twitter icon with padding)
+[facebook.1]: http://i.imgur.com/P3YfQoD.png (facebook icon with padding)
+[googlePlus.1]: http://i.imgur.com/yCsTjba.png (google plus icon with padding)
+[tumblr.1]: http://i.imgur.com/YckIOms.png (tumblr icon with padding)
+[dribble.1]: http://i.imgur.com/1AGmwO3.png (dribbble icon with padding)
+[github.1]: http://i.imgur.com/0o48UoR.png (github icon with padding)
+
+<!-- icons without padding -->
+[twitter.2]: http://i.imgur.com/wWzX9uB.png (twitter icon without padding)
+[facebook.2]: http://i.imgur.com/fep1WsG.png (facebook icon without padding)
+[3.2]: http://i.imgur.com/VlgBKQ9.png (google plus icon without padding)
+[tumblr.2]: http://i.imgur.com/jDRp47c.png (tumblr icon without padding)
+[dribble.2]: http://i.imgur.com/Vvy3Kru.png (dribbble icon without padding)
+[github.2]: http://i.imgur.com/9I6NRUm.png (github icon without padding)
+
+
+<!-- links to social media accounts -->
+[twitter]: http://www.twitter.com/userName
+[facebook]: http://www.facebook.com/derek.nellis.9
+[googlePlus]: https://plus.google.com/+userName
+[tumblr]: http://userName.tumblr.com
+[dribble]: http://dribbble.com/userName
+[github]: http://www.github.com/musicMan1337
+[instagram]: https://www.instagram.com/derek.8bit.nellis/?hl=en
