@@ -42,7 +42,7 @@
 
 
 ## Quickly format large chunks of code into JSON syntax:
->---
+
 >##### Outside of the JSON snippet file, highlight the code to be converted and press (Shift+Alt+I) to select the last space on every line of code. Insert (",) followed by the *Home button twice (to select the first space of every line), and insert (")
 >```
 >char mander[16] = {
@@ -67,24 +67,23 @@
 >```
 >##### For some cases, I wanted to create snippets with the "\$" character, but within the JSON syntax it registers as a pointer followed by placeholder text. A normal escape (\\) won't work, instead you have to do this: \\\\$
 >* ##### If you highlight a single "\$" and press (Ctrl+F), within the searchbox, press the tiny ">" to the left of the search field. In the next field, type \\$ and select the (Replace All) button.
->> ###### *The functionality of the search bar is incredibly powerful, and I'd highly recommend further reading on it.*
->---
+>>> ###### *The functionality of the search bar is incredibly powerful, and I'd highly recommend further reading on it.*
+>
 
 ## Sass Themes and Fluid Element Sizing:
->---
+>
 >##### I've adapted code written by **Indrek Paas https://gist.github.com/indrekpaas** he's got some other very clever Sass stuff as well.
 >
->---
----
 
 # gitBash || WSL-Ubuntu || hereDocs
 ### First you get the money, then you get the [*powerlevel10k...*][p10k]
 <img src="images/p10k.png" alt="Logo" >
 
 ###### *I won't get into the specifics on setting up WSL here, but know that I personal run Ubuntu on my local Network, using oh-my-zsh terminal and the powerlevel10k theme.  That said, shell-specific scripts will need minor tweaking depending on your own personal dev environment!*
+>
 
 ## Shell Aliases:
->---
+
 >##### An alias is basically a variable that you can assign a shell script to, then run it in the terminal. For example:
 >```
 >alias test1='echo Im an idiot!"
@@ -104,12 +103,12 @@
 >```
 > alias test2='echo But I will...'
 >```
->> ###### *Note your .bashrc should be located in your root directory (cd ~). If by chance it doesn't exist, just create one!*
->---
+>>> ###### *Note your .bashrc should be located in your root directory (cd ~). If by chance it doesn't exist, just create one!*
+>
 
 ## Git Aliases:
->---
->>###### *Git aliases function the same way as shell aliases, but have somewhat different syntax. You could technically create shell aliases to do the same thing, though I personally like separating git and shell aliases.*
+
+>>>###### *Git aliases function the same way as shell aliases, but have somewhat different syntax. You could technically create shell aliases to do the same thing, though I personally like separating git and shell aliases.*
 >##### You can create git aliases in your .gitconfig file located in your rootdirectory. It should have been created and filled with some stuff after using git for the first time, but if it's not there you can always create your own .gitconfig from scratch.
 >* ##### In your .gitconfig file, create aliases in the designated area:
 >```
@@ -124,17 +123,17 @@
 > origin  https://github.com/user/repo.git (push)
 >  $_
 >```
->> ###### *Note your .bashrc should be located in your root directory (cd ~). If by chance it doesn't exist, just create one!*
->> ###### *Also, these are just very basic use cases, and there ar many advanced ways to create scripts such as using functions, combining scripts, using variables, and much more...*
->---
+>>> ###### *Note your .bashrc should be located in your root directory (cd ~). If by chance it doesn't exist, just create one!*
+>>> ###### *Also, these are just very basic use cases, and there ar many advanced ways to create scripts such as using functions, combining scripts, using variables, and much more...*
+>
 
 ## Here Docs:
 *(are OP...)*
->---
->>###### *Here Docs are fairly complex, but on the surface level they are basically just fields of text that can either run complex scripts or create new files populated with said text.*
+
+>>>###### *Here Docs are fairly complex, but on the surface level they are basically just fields of text that can either run complex scripts or create new files populated with said text.*
 >##### 1. I'd suggest creating a folder specifically for your hereDocs in your root directory, and treat the folder itself as a type of .bashrc file, where your "aliases" are actually hereDoc files.
 >##### 2. The easiest way to create a hereDoc is to create a new .txt file (testDoc.txt)
->>###### *Note that hereDocs don't need to strictly be .txt, nor are there naming conventions for the file name. Basically, you just need to be able to edit the text within the file*
+>>>###### *Note that hereDocs don't need to strictly be .txt, nor are there naming conventions for the file name. Basically, you just need to be able to edit the text within the file*
 >##### 3. Let's create 2 simple hereDocs - create test.txt then open:
 >* ###### For running a script, the file itself acts like an alias:
 >```
@@ -163,8 +162,8 @@
 >  $_
 >```
 >* ###### This will have created a new index.js file loaded with boilerplate - you can see how this can be abused for some incredibly powerful use cases! If you'd like an example, [look at my aliases][aliases] and checkout "srclean" - this deletes all the files in creat-react-app and repopulates them with fresh files via hereDocs in under 1 second!
->> ###### *Note that this hardly scratches the surface of Here Docs, so if you'd like to learn more... [Explore the docs! »][hdoc-guide]*
->---
+>>> ###### *Note that this hardly scratches the surface of Here Docs, so if you'd like to learn more... [Explore the docs! »][hdoc-guide]*
+>
 ---
 <!-- CONTRIBUTING -->
 ## Contributing
