@@ -121,6 +121,7 @@
 ><img src="images/hdoc2.png" alt="Logo" style="border: 1px #000 solid; border-radius: 3px">
 >
 > *...in terminal, cd into hereDocs folder...*
+>
 ><img src="images/hdoc2b.png" alt="Logo" style="border: 1px #000 solid; border-radius: 3px">
 >
 >* ###### This will have created a new index.js file loaded with boilerplate - you can see how this can be abused for some incredibly powerful use cases! If you'd like an example, [look at my aliases][aliases] and checkout "srclean" - this deletes all the files in creat-react-app and repopulates them with fresh files via hereDocs in under 1 second!
