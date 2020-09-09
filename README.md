@@ -44,27 +44,16 @@
 ## Quickly format large chunks of code into JSON syntax:
 
 >##### Outside of the JSON snippet file, highlight the code to be converted and press (Shift+Alt+I) to select the last space on every line of code. Insert (",) followed by the *Home button twice (to select the first space of every line), and insert (")
->```
->char mander[16] = {
->  evolve: true
->};
->```
+><img src="images/char1.png" alt="Logo" style="border: 1px #000 solid; border-radius: 3px">
+>
 >###### *...into...*
->```
->"char mander[16] = {",
->"  evolve: true",
->"};",
->```
+><img src="images/char2.png" alt="Logo" style="border: 1px #000 solid; border-radius: 3px">
 >
 >---
 >
 >#### *A note on escape characters:*
+><img src="images/mixin.png" alt="Logo" style="border: 1px #000 solid; border-radius: 3px">
 >
->```
->"@mixin theme($properties, $key) {",       // bad
->...
->"@mixin theme(\\$properties, \\$key) {",   // good, good...
->```
 >##### For some cases, I wanted to create snippets with the "\$" character, but within the JSON syntax it registers as a pointer followed by placeholder text. A normal escape (\\) won't work, instead you have to do this: \\\\$
 >* ##### If you highlight a single "\$" and press (Ctrl+F), within the searchbox, press the tiny ">" to the left of the search field. In the next field, type \\$ and select the (Replace All) button.
 >>> ###### *The functionality of the search bar is incredibly powerful, and I'd highly recommend further reading on it.*
@@ -72,7 +61,7 @@
 
 ## Sass Themes and Fluid Element Sizing:
 >
->##### I've adapted code written by **Indrek Paas https://gist.github.com/indrekpaas** he's got some other very clever Sass stuff as well.
+* ##### I've adapted code written by **Indrek Paas https://gist.github.com/indrekpaas** he's got some other very clever Sass stuff as well.
 >
 
 # gitBash || WSL-Ubuntu || hereDocs
@@ -85,24 +74,18 @@
 ## Shell Aliases:
 
 >##### An alias is basically a variable that you can assign a shell script to, then run it in the terminal. For example:
->```
->alias test1='echo Im an idiot!"
->```
+><img src="images/alias1.png" alt="Logo" style="border: 1px #000 solid; border-radius: 3px">
+>
 >###### *...ran in terminal...*
->```
->  $ test1
-> Youre an idiot!
->  $_
->```
+><img src="images/alias1b.png" alt="Logo" style="border: 1px #000 solid; border-radius: 3px">
+>
 >##### You can create aliases mainly two ways:
 >1. In the terminal, for a temporary alias:
->```
->  $ alias test2='echo I wont last long...'
->```
+><img src="images/alias2b.png" alt="Logo" style="border: 1px #000 solid; border-radius: 3px">
+>
 >2. In your .bashrc file, for a permanent alias:
->```
-> alias test2='echo But I will...'
->```
+><img src="images/alias2.png" alt="Logo" style="border: 1px #000 solid; border-radius: 3px">
+>
 >>> ###### *Note your .bashrc should be located in your root directory (cd ~). If by chance it doesn't exist, just create one!*
 >
 
@@ -111,18 +94,11 @@
 >>>###### *Git aliases function the same way as shell aliases, but have somewhat different syntax. You could technically create shell aliases to do the same thing, though I personally like separating git and shell aliases.*
 >##### You can create git aliases in your .gitconfig file located in your rootdirectory. It should have been created and filled with some stuff after using git for the first time, but if it's not there you can always create your own .gitconfig from scratch.
 >* ##### In your .gitconfig file, create aliases in the designated area:
->```
->[alias]
->...
->  rv = remote --v
->```
+><img src="images/git1.png" alt="Logo" style="border: 1px #000 solid; border-radius: 3px">
+>
 >* ##### You can then invoke the git-specific alias in the terminal:
->```
->  $ git rv
-> origin  https://github.com/user/repo.git (fetch)
-> origin  https://github.com/user/repo.git (push)
->  $_
->```
+><img src="images/git2.png" alt="Logo" style="border: 1px #000 solid; border-radius: 3px">
+>
 >>> ###### *Note your .bashrc should be located in your root directory (cd ~). If by chance it doesn't exist, just create one!*
 >>> ###### *Also, these are just very basic use cases, and there ar many advanced ways to create scripts such as using functions, combining scripts, using variables, and much more...*
 >
@@ -136,31 +112,17 @@
 >>>###### *Note that hereDocs don't need to strictly be .txt, nor are there naming conventions for the file name. Basically, you just need to be able to edit the text within the file*
 >##### 3. Let's create 2 simple hereDocs - create test.txt then open:
 >* ###### For running a script, the file itself acts like an alias:
->```
->echo I\'m a super useful hereDoc!
->```
-> *...in terminal, invoke with shell name...*
->```
->  $ bash ~/hereDocs/test.txt
-> I'm a super useful hereDoc!
->  $_
->```
->* ###### For generating a new file, you'll need to use "delimiters" (here it's "EOS", but it could be anything as long as the match) to wrap the body of your doc, prefaced by a command. In this case, since we aren't running scripts at the end, we only need an opening delimiter:
->```
->>./index.js<<'EOS'
->import React from 'react';
->import ReactDOM from 'react-dom';
->import './styles/global.scss';
->import App from './App';
+><img src="images/hdoc1.png" alt="Logo" style="border: 1px #000 solid; border-radius: 3px">
 >
->ReactDOM.render(<App />, document.getElementById('root'))
->```
+> *...in terminal, invoke with shell name (here I'm using zsh)...*
+><img src="images/hdoc1b.png" alt="Logo" style="border: 1px #000 solid; border-radius: 3px">
+>
+>* ###### For generating a new file, you'll need to use "delimiters" (here it's "EOS", but it could be anything as long as the match) to wrap the body of your doc, prefaced by a command. In this case, since we aren't running scripts at the end, we only need an opening delimiter:
+><img src="images/hdoc2.png" alt="Logo" style="border: 1px #000 solid; border-radius: 3px">
+>
 > *...in terminal, cd into hereDocs folder...*
->```
->  $ cd ~/hereDocs
->  $ bash test.txt
->  $_
->```
+><img src="images/hdoc2b.png" alt="Logo" style="border: 1px #000 solid; border-radius: 3px">
+>
 >* ###### This will have created a new index.js file loaded with boilerplate - you can see how this can be abused for some incredibly powerful use cases! If you'd like an example, [look at my aliases][aliases] and checkout "srclean" - this deletes all the files in creat-react-app and repopulates them with fresh files via hereDocs in under 1 second!
 >>> ###### *Note that this hardly scratches the surface of Here Docs, so if you'd like to learn more... [Explore the docs! »][hdoc-guide]*
 >
