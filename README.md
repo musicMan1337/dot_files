@@ -69,7 +69,7 @@
 >
 
 # gitBash || WSL-Ubuntu || hereDocs
-### First you get the money, then you get the >[*powerlevel10k...*][p10k]
+### First you get the money, then you get the [*powerlevel10k...*][p10k]
 
 <img src="images/p10k.png" alt="Logo" >
 
