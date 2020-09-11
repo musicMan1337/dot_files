@@ -1,4 +1,4 @@
-alias test='echo test... testing, 1, 2... test... test, balls... testing, 1... All clear!'
+alias test='echo Youre an idiot!'
 alias c='clear'
 alias l.='ls -d .* --color=auto'
 alias ..='cd ..'
@@ -24,6 +24,9 @@ alias iserve='npm install serve -D'
 alias serve='npm run serve'
 alias deploy='npm run deploy'
 
+# MERN Stack
+alias mernback='npm i express cors mongoose dotenv'
+
 # REACT Stuff
 alias cra='npx create-react-app'
 alias irpt='npm install --save prop-types'
@@ -31,6 +34,10 @@ alias irtr='npm add --only=dev react-test-renderer'
 alias ienzyme='npm add --only=dev enzyme'
 alias irouter='npm install react-router-dom'
 alias reactpacks='irpt ; irtr ; ienzyme ; irouter'
+alias imuic='npm install @material-ui/core'
+alias imuii='npm install @material-ui/icons'
+alias imuis='npm install @material-ui/styles'
+alias imui='imuic ; imuii; imuis'
 # Format new React app
 alias rclean='touch packages.md && cd public/ && rm -v * && touch index.html manifest.json && .. && cd src/ && rm -v * && touch index.js App.js setupTests.js && mkdir styles components && cd components/ && mkdir Tests && .. && cd styles/ && touch global.scss && ...'
 # ...using hereDocs
@@ -66,6 +73,13 @@ ncc2() {
   touch src/components/"$1"/"$2".js src/components/"$1"/"$2".test.js
 }
 
+# Local navigation
+alias cdcode='cd /mnt/e/Code'
+alias cdgo='cd ~/go/src/github.com/musicMan1337/'
+
+# API servers
+alias apigot='/mnt/c/Users/admin/go/src/github.com/musicMan1337/my_test_api/my_test_api.exe'
+
 # Global hereDocs
 # ==> for react cleanup <==
 alias indexhtml='zsh /mnt/c/Users/admin/hereDocs/reactClean/indexhtml.txt'
@@ -93,6 +107,10 @@ alias jsJson='cp /mnt/c/Users/admin/AppData/Roaming/Code/User/snippets/javascrip
 alias scssJson='cp /mnt/c/Users/admin/AppData/Roaming/Code/User/snippets/scss.json .'
 alias jsonJson='cp /mnt/c/Users/admin/AppData/Roaming/Code/User/snippets/json.json .'
 alias mdJson='cp /mnt/c/Users/admin/AppData/Roaming/Code/User/snippets/markdown.json .'
+# ==> hereDocs <==
+alias hDocs='cp -r /mnt/c/Users/admin/hereDocs .'
+# ==> windows terminal settings <==
+alias wtsettings='cp /mnt/c/Users/admin/AppData/Local/Packages/Microsoft.WindowsTerminal_8wekyb3d8bbwe/LocalState/settings.json .'
 # ==> repo <==
 alias snippets='/mnt/e/Code/Snippets_Aliases_andMore/VScode_Snippets'
 alias zScripts='/mnt/e/Code/Snippets_Aliases_andMore/ubuntu_zsh_scripts'
@@ -107,7 +125,7 @@ snsupdate ()
   zScripts && zAliases ; zGitconfig ;
   bScripts && bAliases ; bGitconfig ;
   vSnippets && globalJson ; htmlJson; jsJson ; scssJson ; jsonJson ; mdJson ;
-  .. && git save && git push
+  .. ; wtsettings && hDocs && git cm "$@" && git push
 }
 
 loadMessage
