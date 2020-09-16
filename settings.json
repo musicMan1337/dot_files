@@ -36,6 +36,7 @@
       {
         // Make changes here to the powershell.exe profile.
         "name": "Windows PowerShell",
+        "colorScheme": "PowerShell",
         "guid": "{61c54bbd-c2c6-5271-96e7-009a87ff44bf}",
         "commandline": "powershell.exe",
         "hidden": false
@@ -43,31 +44,38 @@
       {
         // Make changes here to the cmd.exe profile.
         "name": "Command Prompt",
+        "colorScheme": "Retro",
         "guid": "{0caa0dad-35be-5f56-a8ff-afceeeaa6101}",
+        "fontSize": 16,
+        "fontFace": "PxPlus IBM VGA8",
         "commandline": "cmd.exe",
-        "hidden": false
+        "experimental.retroTerminalEffect": true,
+        "hidden": false,
+        "closeOnExit" : true
       },
       {
         // https://www.youtube.com/watch?v=235G6X5EAvM&ab_channel=TheDigitalLife for help
         "name": "Ubuntu",
-        "colorScheme": "xcad_ps",
+        "colorScheme": "UbuntuLegit",
+        "suppressApplicationTitle": true,
+        "tabTitle" : "ZSH Dank Powerlines",
         "hidden": false,
         "snapOnInput": true,
-        "historySize" : 9001,
         "closeOnExit": "graceful",
         "useAcrylic": true,
         "acrylicOpacity": 0.6,
         "fontSize": 12,
         "fontFace": "DroidSansMono Nerd Font",
-        "icon": "ms-appdata:///roaming/zsh.png",
+        "icon": "C:/Users/admin/Pictures/ubuntuicon.png",
         "source": "Windows.Terminal.Wsl",
         "guid": "{2c4de342-38b7-51cf-b940-2309a097f518}"
       },
       {
         "name" : "Git Bash",
         "colorScheme" : "GitBash",
+        "suppressApplicationTitle": true,
+        "tabTitle" : "Git Bashed",
         "snapOnInput" : true,
-        "historySize" : 9001,
         "closeOnExit" : "graceful",
         "useAcrylic" : true,
         "acrylicOpacity" : 0.6,
@@ -89,6 +97,27 @@
   // Add custom color schemes to this array.
   // To learn more about color schemes, visit https://aka.ms/terminal-color-schemes
   "schemes": [
+    {
+      "name":  "UbuntuLegit",
+      "background":  "#2C001E",
+      "black":  "#333",
+      "blue":  "#3465A4",
+      "brightBlack":  "#555753",
+      "brightBlue":  "#729FCF",
+      "brightCyan":  "#34E2E2",
+      "brightGreen":  "#8AE234",
+      "brightPurple":  "#AD7FA8",
+      "brightRed":  "#EF2929",
+      "brightWhite":  "#EEEEEE",
+      "brightYellow":  "#FCE94F",
+      "cyan":  "#06989A",
+      "foreground":  "#EEEEEE",
+      "green":  "#300A24",
+      "purple":  "#75507B",
+      "red":  "#CC0000",
+      "white":  "#D3D7CF",
+      "yellow":  "#C4A000"
+  },
     {
       "name" : "xcad",
       "background" : "#000000",
@@ -133,7 +162,7 @@
     },
     {
       "name" : "GitBash",
-      "background" : "#000000",
+      "background" : "#2e0000",
       "black" : "#0C0C0C",
       "blue" : "#6060ff",
       "brightBlack" : "#767676",
@@ -151,6 +180,48 @@
       "red" : "#bf0000",
       "white" : "#ffffff",
       "yellow" : "#bfbf00"
+    },
+    {
+      "name" : "PowerShell",
+      "background" : "#1e1f4a",
+      "black" : "#878787",
+      "blue" : "#44B4CC",
+      "brightBlack" : "#E373C8",
+      "brightBlue" : "#0000FF",
+      "brightCyan" : "#19D1D8",
+      "brightGreen" : "#81EC0D",
+      "brightPurple" : "#FF00FF",
+      "brightRed" : "#FF0000",
+      "brightWhite" : "#E5E5E5",
+      "brightYellow" : "#FFD93D",
+      "cyan" : "#19D1D8",
+      "foreground" : "#FFFFFF",
+      "green" : "#CCFF04",
+      "purple" : "#9933CC",
+      "red" : "#FF6600",
+      "white" : "#F5F5F5",
+      "yellow" : "#FFD93D"
+    },
+    {
+      "name": "Retro",
+      "background": "#000000",
+      "black": "#00ff00",
+      "blue": "#00ff00",
+      "brightBlack": "#00ff00",
+      "brightBlue": "#00ff00",
+      "brightCyan": "#00ff00",
+      "brightGreen": "#00ff00",
+      "brightPurple": "#00ff00",
+      "brightRed": "#00ff00",
+      "brightWhite": "#00ff00",
+      "brightYellow": "#00ff00",
+      "cyan": "#00ff00",
+      "foreground": "#00ff00",
+      "green": "#00ff00",
+      "purple": "#00ff00",
+      "red": "#00ff00",
+      "white": "#00ff00",
+      "yellow": "#00ff00"
     }
   ],
 

@@ -1,0 +1,99 @@
+>./src/styles/mixins/transition.scss<<'EOS'
+// ========== Transitions ========== //
+@mixin transition($transitions...) {
+
+  $unfoldedTransitions: ();
+  @each $transition in $transitions {
+    $unfoldedTransitions: append($unfoldedTransitions, unfoldTransition($transition), comma);
+  }
+
+  transition: $unfoldedTransitions;
+}
+
+@function unfoldTransition ($transition) {
+
+  $property: all;
+  $duration: .2s;
+  $easing: null;
+  $delay: null;
+  $defaultProperties: ($property, $duration, $easing, $delay);
+
+  // Grab transition properties if they exist
+  $unfoldedTransition: ();
+  @for $i from 1 through length($defaultProperties) {
+    $p: null;
+    @if $i <= length($transition) {
+      $p: nth($transition, $i)
+    } @else {
+      $p: nth($defaultProperties, $i)
+    }
+    $unfoldedTransition: append($unfoldedTransition, $p);
+  }
+
+  @return $unfoldedTransition;
+}
+
+// Use:
+// @include transition(opacity 0.3s, transform 0.3s, filter 0.3s ease-in);
+EOS
+>./src/styles/mixins/fluid-type.scss<<'EOS'
+// ========== Fluid Element Sizing (px/rem) ========== //
+@mixin fluid-type($properties, $min-vw, $max-vw, $min-value, $max-value) {
+
+  @each $property in $properties {
+    #{$property}: $min-value;
+  }
+
+  @media (min-width: $min-vw) {
+    @each $property in $properties {
+      #{$property}: calc(#{$min-value} + #{strip-unit($max-value - $min-value)} * (100vw - #{$min-vw}) / #{strip-unit($max-vw - $min-vw)});
+    }
+  }
+
+  @media (min-width: $max-vw) {
+    @each $property in $properties {
+      #{$property}: $max-value;
+    }
+  }
+
+}
+
+@function strip-unit($number) {
+  @if type-of($number) == "number" and not unitless($number) {
+    @return $number / ($number * 0 + 1);
+  }
+  @return $number;
+}
+
+// Use:
+// @include fluid-type(font-size, 320px, 1400px, 16px, 24px);
+// @include fluid-type(margin-left margin-right, 320px, 1400px, 10px, 50px);
+EOS
+>./src/styles/mixins/scrollbars-buffed.scss<<'EOS'
+// ========== Custom Scrollbars ==> BUFFED <== ========== //
+@mixin scrollbars-buffed($size, $border-radius: 3px, $foreground-color: #999, $background-color: #eee) {
+
+  ::-webkit-scrollbar {
+    width: $size;
+  }
+
+  ::-webkit-scrollbar-track {
+    background: $background-color;
+    box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+    border-radius: $border-radius;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    border-radius: $border-radius;
+    background: $foreground-color;
+    box-shadow: inset 0 0 6px rgba(0,0,0,0.5);
+  }
+  ::-webkit-scrollbar-thumb:window-inactive {
+    background-color: mix($foreground-color, white, 40%);
+  }
+}
+
+// Use:
+// @include scrollbars-buffed(.5em);
+EOS
+echo 1

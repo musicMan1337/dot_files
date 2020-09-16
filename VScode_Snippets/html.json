@@ -39,7 +39,7 @@
     "body": [
       "  <!-- Font-Family CDNs -->",
       "  <link href=\"https://fonts.googleapis.com/css2?family=BenchNine:wght@300;400;700&display=swap\" rel=\"stylesheet\">",
-      "  <link href=\"https://fonts.googleapis.com/css2?family=BenchNine:wght@300;400;700&display=swap\" rel=\"stylesheet\">",
+      "  <link href=\"https://fonts.googleapis.com/css2?family=Yantramanav:wght@100;300;400;500;700;900&display=swap\" rel=\"stylesheet\">",
       "  <link href=\"https://fonts.googleapis.com/css2?family=Fira+Code:wght@300;400;500;600;700&display=swap\" rel=\"stylesheet\">",
     ],
     "description": "Font Bank"
@@ -131,7 +131,7 @@
       "",
       "  <!-- Font-Family CDNs -->",
       "  <!-- <link href=\"https://fonts.googleapis.com/css2?family=BenchNine:wght@300;400;700&display=swap\" rel=\"stylesheet\"> -->",
-      "  <!-- <link href=\"https://fonts.googleapis.com/css2?family=BenchNine:wght@300;400;700&display=swap\" rel=\"stylesheet\"> -->",
+      "  <!-- <link href=\"https://fonts.googleapis.com/css2?family=Yantramanav:wght@100;300;400;500;700;900&display=swap\" rel=\"stylesheet\"> -->",
       "  <!-- <link href=\"https://fonts.googleapis.com/css2?family=Fira+Code:wght@300;400;500;600;700&display=swap\" rel=\"stylesheet\"> -->",
       "",
       "  <link rel=\"stylesheet\" href=\"/styles/pile/sassy.css\">",
@@ -165,7 +165,7 @@
       "",
       "  <!-- Font-Family CDNs -->",
       "  <link href=\"https://fonts.googleapis.com/css2?family=BenchNine:wght@300;400;700&display=swap\" rel=\"stylesheet\">",
-      "  <link href=\"https://fonts.googleapis.com/css2?family=BenchNine:wght@300;400;700&display=swap\" rel=\"stylesheet\">",
+      "  <link href=\"https://fonts.googleapis.com/css2?family=Yantramanav:wght@100;300;400;500;700;900&display=swap\" rel=\"stylesheet\">",
       "  <link href=\"https://fonts.googleapis.com/css2?family=Fira+Code:wght@300;400;500;600;700&display=swap\"",
       "    rel=\"stylesheet\">",
       "</head>",

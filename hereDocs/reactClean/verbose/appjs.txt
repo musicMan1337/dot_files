@@ -1,0 +1,16 @@
+>./src/components/app/app.js<<'EOS'
+import React from 'react';
+
+const App = () => {
+  const stuffHere = 'WOW!!!';
+
+  return (
+    <main className="App">
+      {stuffHere}
+    </main>
+  );
+};
+
+export default App;
+EOS
+echo 4

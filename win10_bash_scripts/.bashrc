@@ -7,12 +7,15 @@ alias .3='cd ../../../'
 alias .4='cd ../../../../'
 alias .5='cd ../../../../..'
 alias calias='code ~/.bashrc'
+alias cec='code ~/.gitconfig'
+# really . . .
+alias cpsql='cd ~ ; ... ; cd "Program Files"/ ; code PostgreSQL/12/data/postgresql.conf'
 alias exp='explorer.exe .'
 
 # NPM Stuff
 alias ieslint='touch .eslintrc.yaml .eslintignore && npm i eslint --only=dev && npx install-peerdeps --only=dev eslint-config-airbnb'
 alias lint='npm run lint'
-alias isass='npm install node-sass -S'
+alias isass='npm install node-sass'
 alias start='npm start'
 
 # Deployment
