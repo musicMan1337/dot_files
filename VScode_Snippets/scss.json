@@ -1,7 +1,7 @@
 {
-	// Place your snippets for scss here. Each snippet is defined under a snippet name and has a prefix, body and 
+	// Place your snippets for scss here. Each snippet is defined under a snippet name and has a prefix, body and
 	// description. The prefix is what is used to trigger the snippet and the body will be expanded and inserted. Possible variables are:
-	// $1, $2 for tab stops, $0 for the final cursor position, and ${1:label}, ${2:another} for placeholders. Placeholders with the 
+	// $1, $2 for tab stops, $0 for the final cursor position, and ${1:label}, ${2:another} for placeholders. Placeholders with the
 	// same ids are connected.
 	"Template": {
 		"prefix": "",
@@ -43,6 +43,37 @@
 
 		],
 		"description": "mixtemp"
+  },
+	"Breakpoints": {
+		"prefix": "mixbreakpoints",
+		"body": [
+      "// ========== Breakpoints ========== //",
+      "",
+      "@mixin breakpoint(\\$point) {",
+      "  @if \\$point == widescreen {",
+      "    @media (min-width: 1800px) { @content ; }",
+      " }",
+      "",
+      "  @if \\$point == desktop {",
+      "    @media (min-width: 1200px) { @content ; }",
+      " }",
+      "",
+      "  @if \\$point == laptop {",
+      "    @media (min-width: 1024px) { @content ; }",
+      " }",
+      "",
+      "  @if \\$point == tablet {",
+      "    @media (min-width: 768px)  { @content ; }",
+      " }",
+      "",
+      " @if \\$point == mobile {",
+      "    @media (max-width: 480px)  { @content ; }",
+      " }",
+      "}",
+      "// Use:",
+      "// @include breakpoint(typeName) {(Styles)}",
+		],
+		"description": "Breakpoints"
   },
 	"Scrollbars": {
 		"prefix": "mixscrollbars",

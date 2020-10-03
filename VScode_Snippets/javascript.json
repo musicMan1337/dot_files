@@ -30,7 +30,7 @@
     "prefix": "promise",
     "body": [
       "const ${1:name} = new Promise((resolve, reject) => {",
-      "  console.log('${1:name} Promise Start');",
+      "  console.log('${1:name} Promise Start')",
       "  $0",
       "});"
     ],
@@ -421,5 +421,26 @@
       "  }",
       "};",    ],
     "description": "WebPack Config"
+  },
+  // *************************************** //
+  // *************************************** //
+  // ************** TESTING  *************** //
+  "testingTemplate": {
+    "prefix": "",
+    "body": [
+
+    ],
+    "description": "testingTemplate"
+  },
+  "Describe Suite": {
+    "prefix": "describesuite",
+    "body": [
+      "describe('fileName', () => {",
+      "  it('happyPath', () => {});",
+      "",
+      "  it('happyPath', () => {});",
+      "});"
+    ],
+    "description": "Describe Suite"
   },
 }

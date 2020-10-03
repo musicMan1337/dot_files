@@ -6,6 +6,8 @@
 [user]
 	name = Derek \"8-Bit\" Nellis
 	email = dnellis3456@gmail.com
+[credential]
+	helper = /mnt/c/Program\\ Files/Git/mingw64/libexec/git-core/git-credential-manager.exe
 [core]
 	longpaths = true
 [alias]
@@ -23,6 +25,7 @@
   cob = checkout -b
   cm = !git add -A && git commit -m
   save = !git add -A && git commit -m "SAVEPOINT"
+  savep = !git add -A && git commit -m "SAVEPOINT" && git push
   wip = commit -am "WIP"
   undo = reset HEAD~1 --mixed
   amend = commit -a --amend

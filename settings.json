@@ -45,8 +45,11 @@
         // Make changes here to the cmd.exe profile.
         "name": "Command Prompt",
         "colorScheme": "Retro",
+        "suppressApplicationTitle": true,
+        "tabTitle" : "The Matrix",
+        "acrylicOpacity": 0.9,
         "guid": "{0caa0dad-35be-5f56-a8ff-afceeeaa6101}",
-        "fontSize": 16,
+        "fontSize": 14,
         "fontFace": "PxPlus IBM VGA8",
         "commandline": "cmd.exe",
         "experimental.retroTerminalEffect": true,
@@ -56,6 +59,7 @@
       {
         // https://www.youtube.com/watch?v=235G6X5EAvM&ab_channel=TheDigitalLife for help
         "name": "Ubuntu",
+        "startingDirectory" : "//wsl$/Ubuntu/home/dnellis6534",
         "colorScheme": "UbuntuLegit",
         "suppressApplicationTitle": true,
         "tabTitle" : "ZSH Dank Powerlines",
@@ -72,6 +76,7 @@
       },
       {
         "name" : "Git Bash",
+        "startingDirectory" : "C:/Users/admin",
         "colorScheme" : "GitBash",
         "suppressApplicationTitle": true,
         "tabTitle" : "Git Bashed",
@@ -112,7 +117,7 @@
       "brightYellow":  "#FCE94F",
       "cyan":  "#06989A",
       "foreground":  "#EEEEEE",
-      "green":  "#300A24",
+      "green":  "#06ba12",
       "purple":  "#75507B",
       "red":  "#CC0000",
       "white":  "#D3D7CF",

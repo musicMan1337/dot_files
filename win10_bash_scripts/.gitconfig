@@ -8,6 +8,7 @@
 	email = dnellis3456@gmail.com
 [core]
 	longpaths = true
+	autocrlf = false
 [alias]
   ec = config --global -e
 	hist = log --oneline --all --graph --decorate
