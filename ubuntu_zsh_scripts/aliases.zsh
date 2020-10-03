@@ -175,11 +175,15 @@ alias cdvanilla='cd /mnt/e/Code/sandbox/Vanilla_sandbox'
 alias cdgo='cd ~/go/src/github.com/musicMan1337/'
 
 # Snippets_n_Scripts repo update
-# ==> shell stuff <==
+# ==> shell aliases <==
 alias zAliases='cp ~/.oh-my-zsh/custom/aliases.zsh .'
 alias zGitconfig='cp ~/.gitconfig .'
 alias bAliases='cp /mnt/c/Users/admin/.bashrc .'
 alias bGitconfig='cp /mnt/c/Users/admin/.gitconfig .'
+# ==> shell .rc files <==
+alias zBashrc='cp ~/.bashrc .'
+alias zZshrc='cp ~/.zshrc .'
+alias zP10k='cp ~/.p10k.zsh .'
 # ==> VScode snippets <==
 alias globalJson='cp /mnt/c/Users/admin/AppData/Roaming/Code/User/snippets/html-local.code-snippets .'
 alias htmlJson='cp /mnt/c/Users/admin/AppData/Roaming/Code/User/snippets/html.json .'
@@ -199,10 +203,12 @@ alias bScripts='/mnt/e/Code/Snippets_Aliases_andMore/win10_bash_scripts'
 alias vSnippets='cd /mnt/e/Code/Snippets_Aliases_andMore/VScode_Snippets'
 alias zScripts='cd /mnt/e/Code/Snippets_Aliases_andMore/ubuntu_zsh_scripts'
 alias bScripts='cd /mnt/e/Code/Snippets_Aliases_andMore/win10_bash_scripts'
+alias shellsrc='cd /mnt/e/Code/Snippets_Aliases_andMore/shellrc_Files'
 # ==> mega updater <==
 snsupdate () {
   zScripts && zAliases ; zGitconfig ;
   bScripts && bAliases ; bGitconfig ;
+  shellsrc && zBashrc ; zZshrc ; zP10k
   vSnippets && globalJson ; htmlJson; jsJson ; scssJson ; jsonJson ; mdJson ;
   .. ; wtsettings && hDocs && git cm "$@" && git push
 }
