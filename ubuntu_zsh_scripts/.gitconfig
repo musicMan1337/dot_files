@@ -10,6 +10,10 @@
 	helper = /mnt/c/Program\\ Files/Git/mingw64/libexec/git-core/git-credential-manager.exe
 [core]
 	longpaths = true
+[boilerplates]
+  brjs = clone https://github.com/musicMan1337/React_Boilerplate.git client
+  brts = clone https://github.com/musicMan1337/React_TS_Boilerplate.git client
+  bejs = clone https://github.com/musicMan1337/Express_PSQL_Boilerplate.git server
 [alias]
   ec = config --global -e
 	hist = log --oneline --all --graph --decorate

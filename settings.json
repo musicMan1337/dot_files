@@ -30,6 +30,7 @@
       "acrylicOpacity": 0.7,
       "fontFace": "Anonymice Nerd Font",
       "fontSize": 16,
+      "padding": "8, 8, 8, 8",
       "colorScheme": "xcad"
     },
     "list": [

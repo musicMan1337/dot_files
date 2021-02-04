@@ -2,16 +2,14 @@ alias test='echo test... testing, 1, 2... test... test, balls... testing, 1... A
 alias c='clear'
 alias l.='ls -d .* --color=auto'
 alias ..='cd ..'
-alias ...='cd ../../'
-alias .3='cd ../../../'
-alias .4='cd ../../../../'
+alias ...='cd ../..'
+alias .3='cd ../../..'
+alias .4='cd ../../../..'
 alias .5='cd ../../../../..'
-alias calias='code ~/.oh-my-zsh/custom/aliases.zsh'
-alias cec='code ~/.gitconfig'
-alias czsh='code ~/.zshrc'
-alias cp10k='code ~/.p10k.zsh'
-alias cpsql='cd ~ ; ... ; sudo vi /etc/postgresql/12/main/postgresql.conf'
 alias exp='explorer.exe .'
+
+# Heroku stuff
+alias herokuenv='heroku config:set $(cat .env.heroku | sed "/^$/d; /#[[:print:]]*$/d")'
 
 # NPM Stuff
 alias ieslint='npm install eslint -D'
@@ -29,7 +27,7 @@ alias migrate='npm run migrate'
 alias migrate:test='npm run migrate:test'
 alias seed='npm run seed'
 
-# Node.js
+# Node."$3"
 alias iexpress='npm install express'
 alias inodemon='npm install nodemon -D'
 alias imorgan='npm install morgan'
@@ -42,17 +40,29 @@ alias imocha='npm install mocha -D'
 alias ichai='npm install chai -D'
 alias isupertest='npm install supertest -D'
 alias inodetpacks='npm install -D mocha chai supertest nyc'
-
-# Express API
-nmig() { cd db/migrations ; touch "$1".do.create."$2".sql "$1".undo.create."$2".sql ; ... ;}
-nmigjs() { cd db/migrations ; touch "$1".do.create."$2".js "$1".undo.create."$2".js ; ... ;}
-nseed() { cd db/seeds ; touch seed."$@".sql trunc."$@".sql ; ... ;}
+# ==> Database migrations/seeds <==
+# ex: <'cnm' or 'cnmjs'> [01] [table_name]
+cnm() { cd db/migrations ; touch "$1".do.create."$2".sql "$1".undo.create."$2".sql ; ... ;}
+cnmjs() { cd db/migrations ; touch "$1".do.create."$2"."$3" "$1".undo.create."$2"."$3" ; ... ;}
+cns() { cd db/seeds ; touch seed."$@".sql trunc."$@".sql ; ... ;}
 # ==> create Express boilerplate <==
 cnebrepo='https://github.com/musicMan1337/Express_Boilerplate.git'
 cneb() { git clone $cnebrepo "$@" && cd "$@" ; rm -rfv .git && git init && mv dummy.env .env && npm install ;}
 # ==> create Express/PostgreSQL boilerplate <==
 cnepsqlbrepo='https://github.com/musicMan1337/Express_PSQL_Boilerplate.git'
-cnepb() { git clone $cnepsqlbrepo "$@" && cd "$@" ; rm -rfv .git && git init && mv dummy.env .env && npm install ;}
+cnepb() { npx degit $cnepsqlbrepo "$@" && cd "$@" ; rm -rfv .git && git init && mv dummy.env .env && npm install ;}
+
+# Docker
+alias cdf='touch Dockerfile Dockerfile.dev .dockerignore'
+alias cdc='touch docker-compose.yml'
+alias dsa='docker stop $(docker ps -aq)'
+alias dcup='docker-compose up'
+alias dcdown='docker-compose down'
+alias dcstart='docker-compose start'
+alias dcstop='docker-compose stop'
+alias dcfr='docker-compose up --force-recreate'
+alias dcrmi='docker-compose down --rmi all'
+dit() { docker exec -it "$@" /bin/bash ;}
 
 # REACT Stuff
 alias cra='npx create-react-app'
@@ -68,24 +78,24 @@ alias imuis='npm install @material-ui/styles'
 alias imuipacks='npm install @material-ui/core @material-ui/icons @material-ui/styles'
 alias icountup='npm install react-countup'
 alias iclassnames='npm install classnames'
-alias ichartjs='npm install react-chartjs-2 chart.js'
+alias ichartjs='npm install react-chartjs-2 chart."$3"'
 
 # Format new React app using hereDocs
 # ==> STANDARD react structure <==
-snc() { touch src/"$@".js ;}
-sncd() { mkdir src/"$@" ; touch src/"$@"/"$@".js src/"$@"/"$@".test.js ;}
-sncb() { touch src/"$1"/"$2".js src/"$1"/"$2".test.js ;}
+snc() { touch src/"$@"."$3" ;}
+sncd() { mkdir src/"$@" ; touch src/"$@"/"$@"."$3" src/"$@"/"$@".test."$3" ;}
+sncb() { touch src/"$1"/"$2"."$3" src/"$1"/"$2".test."$3" ;}
 snhc() {
   if [[ ! -d src/hooks ]];
     then mkdir src/hooks src/hooks/Tests
-  fi && touch src/hooks/"$@".js src/hooks/Tests/"$@".test.js
-}
+  fi && touch src/hooks/"$@"."$3" src/hooks/Tests/"$@".test."$3"
+;}
 sncc() {
   if [[ ! -d src/components ]];
     then mkdir src/components src/components/Tests
-  fi && touch src/components/"$@".js src/components/Tests/"$@".test.js
-}
-snccd() { mkdir src/components/"$1" && touch src/components/"$1"/"$2".js src/components/"$1"/"$2".test.js ;}
+  fi && touch src/components/"$@"."$3" src/components/Tests/"$@".test."$3"
+;}
+snccd() { mkdir src/components/"$1" && touch src/components/"$1"/"$2"."$3" src/components/"$1"/"$2".test."$3" ;}
 # ==> create React:Standard boilerplate <==
 cnrsbrepo=''
 cnrsb() { git clone $cnepsqlbrepo "$@" && cd "$@" ; rm -rfv .git && npm install & mv dummy.env .env ;}
@@ -99,28 +109,46 @@ alias srglobalscss='zsh /mnt/c/Users/admin/hereDocs/reactClean/standard/globalsc
 alias srFileGenerator='srindexhtml && srmanifestjson && srindexjs && srappjs && srsetupTestsjs && srglobalscss'
 
 # ==> VERBOSE react structure <==
-# ex: vnc [compName] [CompName]
+# ex: vnc [compName] [CompName] [extension (js/tsx)]
 vnc() {
-  mkdir src/components/"$1" ; cd src/components/"$1" ; touch "$1".scss "$1".js "$1".test.js index.js ; echo "export { default as $2 } from './$1'" >> index.js ; .. ; echo "export { $2 } from './$1'" >> index.js ; ...
-}
-# ex: vncc [parentCompDir] [compName] [CompName]
+  mkdir src/components/"$1" ; cd src/components/"$1" ; touch "$1".scss "$1"."$3" "$1".test."$3" ; .. ;
+  if [[ "$3" == "tsx" ]]
+    then echo "export { default as $2 } from './$1/$1';" >> index.ts ; ...
+    else echo "export { default as $2 } from './$1/$1';" >> index.js ; ...
+  fi
+;}
+# ex: vncc [parentCompDir] [compName] [CompName] [extension (js/tsx)]
 vncc() {
   if [[ ! -d src/components/"$1"/components ]]
-    then mkdir src/components/"$1"/components/ ; touch mkdir src/components/"$1"/components/index.js
-  fi && mkdir src/components/"$1"/components/"$2" ; cd src/components/"$1"/components ; echo "export { $3 } from './$2'" >> index.js ; cd "$2" ; touch "$2".scss "$2".js index.js ; echo "export { default as $3 } from './$2'" >> index.js ; .5
-}
-# ex: vncc [compName] [CompName]
+    then mkdir src/components/"$1"/components/ ;
+  fi && mkdir src/components/"$1"/components/"$2" ; cd src/components/"$1"/components ;
+  if [[ "$4" == "tsx" ]]
+    then echo "export { default as $3 } from './$2/$2';" >> index.ts ;
+    else echo "export { default as $3 } from './$2/$2';" >> index.js ;
+  fi && cd "$2" ; touch "$2".scss "$2"."$4"; .5
+;}
+# ex: vncc [compName] [CompName] [extension (js/tsx)]
 vnch() {
   if [[ ! -d src/components/"$1"/hooks ]]
-    then mkdir src/components/"$1"/hooks ; touch src/components/"$1"/hooks/index.js src/components/"$1"/hooks/use"$2".test.js
-  fi && cd src/components/"$1" ; echo "export { $2 } from './hooks'" >> index.js ; cd hooks ; touch "$2".js ; echo "export { default as $2 } from './$2'" >> index.js ; .4
-}
-vnh() { touch src/helpers/"$@".js ;}
-vnr() { touch src/routes/"$@".js ;}
+    then mkdir src/components/"$1"/hooks ; touch src/components/"$1"/hooks/use"$2".test."$3"
+  fi && cd src/components/"$1" ;
+  if [[ "$4" == "tsx" ]]
+    then echo "export { $2 } from './hooks';" >> index.ts ; cd hooks ; touch "$2"."$3" ; echo "export { default as $2 } from './$2';" >> index.ts ;
+    else echo "export { $2 } from './hooks';" >> index.js ; cd hooks ; touch "$2"."$3" ; echo "export { default as $2 } from './$2';" >> index.js ;
+  fi && .4
+;}
+# ex: vnr [routeName] [RouteName] [extension (js/tsx)]
+vnr() {
+  mkdir src/routes/"$1" ; cd src/routes/"$1" ; touch "$1".scss "$1"."$3" "$1".test."$3" ; .. ;
+  if [[ "$4" == "tsx" ]]
+    then echo "export { default as $2 } from './$1/$1';" >> index.ts ;
+    else echo "export { default as $2 } from './$1/$1';" >> index.js ;
+  fi && ...
+;}
 # ==> create React:Verbose boilerplate <==
 cnrvbrepo='https://github.com/musicMan1337/React_Boilerplate.git'
-cnrvb() { git clone $cnepsqlbrepo "$@" && cd "$@" ; rm -rfv .git && git init && npm install ;}
-alias vrclean='setopt localoptions rmstarsilent && rm -rfv public/* src/* ; cd src ; mkdir components images helpers routes styles styles/mixins styles/variables ; touch components/index.js ; .. ; vnc app App ; rm src/components/index.js ; touch src/components/index.js ; mammothHead public/ && vrFileGenerator && vrcMessage'
+cnrvb() { npx degit $cnrvbrepo "$@" && cd "$@" ; git init && npm install ;}
+alias vrclean='setopt localoptions rmstarsilent && rm -rfv public/* src/* ; cd src ; mkdir components images helpers routes styles styles/mixins styles/variables ; touch components/index."$3" ; .. ; vnc app App ; rm src/components/index."$3" ; touch src/components/index."$3" ; mammothHead public/ && vrFileGenerator && vrcMessage'
 alias vrcMessage='/mnt/c/Users/admin/hereDocs/asciiArt/vrcMessage.txt'
 alias vrindexhtml='zsh /mnt/c/Users/admin/hereDocs/reactClean/verbose/indexhtml.txt'
 alias vrmanifestjson='zsh /mnt/c/Users/admin/hereDocs/reactClean/verbose/manifestjson.txt'
@@ -137,11 +165,12 @@ npdd() {
   if [[ ! -d project_dump ]]
     then mkdir project_dump
   fi && mkdir project_dump/"$@" project_dump/"$@"/src project_dump/"$@"/server project_dump/"$@"/server/test
-}
+;}
 alias gitatt='zsh /mnt/c/Users/admin/hereDocs/git/gitattributes.txt'
 alias mammothHead='cp /mnt/c/Users/admin/favicon.ico'
-alias loadMessage='/mnt/c/Users/admin/hereDocs/asciiArt/loadMessage.txt'
-loadMessage
+alias p='/mnt/c/Users/admin/hereDocs/asciiArt/loadMessage.txt'
+p
+
 
 #<-- - = == ===\__WSL-ONLY STUFF BEYOND HERE!__|=== == = - -->#
 # Kill Commands
@@ -166,13 +195,28 @@ alias mdbstatus='sudo service mongodb status'
 alias mdbstart='sudo service mongodb start'
 alias mdbstop='sudo service mongodb stop'
 
+# IDE navigation
+alias c.='code .'
+alias calias='code ~/.oh-my-zsh/custom/aliases.zsh'
+alias cec='code ~/.gitconfig'
+alias czsh='code ~/.zshrc'
+alias cp10k='code ~/.p10k.zsh'
+alias ccode='code ~/code'
+alias ccode='code ~/code'
+alias cdiscord='code ~/code/discord'
+
 # Folder navigation
-alias cdcode='cd /mnt/e/Code'
-alias cdmern='cd /mnt/e/Code/sandbox/MERN_Stack_sandbox'
-alias cdnode='cd /mnt/e/Code/sandbox/Node_Server_sandbox'
-alias cdreact='cd /mnt/e/Code/sandbox/React_sandbox'
-alias cdvanilla='cd /mnt/e/Code/sandbox/Vanilla_sandbox'
-alias cdgo='cd ~/go/src/github.com/musicMan1337/'
+alias mntcode='cd /mnt/e/Code'
+alias cdcode='cd ~/code'
+alias cddiscord='cd ~/code/discord'
+alias cdboiler='cd ~/code/Boilerplate_Repos'
+alias cdgo='cd ~/go/src/github.com/musicMan1337'
+alias cap1='cd ~/code/thinkful_capstone_1'
+alias cap2='cd ~/code/cap2'
+alias cap3='cd ~/code/cap3'
+
+# Boilerplates repo update
+alias savebps='cdboiler ; cd express_boilerplate/ ; git savep ; .. ; cd react_boilerplate/ ; git savep ; .. ; cd express_psql_boilerplate/ ; git savep ; .. ; cd react_ts_boilerplate/ ; git savep ; ..'
 
 # Snippets_n_Scripts repo update
 # ==> shell aliases <==
@@ -208,7 +252,7 @@ alias shellsrc='cd /mnt/e/Code/Snippets_Aliases_andMore/shellrc_Files'
 snsupdate () {
   zScripts && zAliases ; zGitconfig ;
   bScripts && bAliases ; bGitconfig ;
-  shellsrc && zBashrc ; zZshrc ; zP10k
+  shellsrc && zBashrc ; zZshrc ; zP10k ;
   vSnippets && globalJson ; htmlJson; jsJson ; scssJson ; jsonJson ; mdJson ;
   .. ; wtsettings && hDocs && git cm "$@" && git push
 }

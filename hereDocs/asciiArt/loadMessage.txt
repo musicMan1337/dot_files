@@ -25,6 +25,6 @@ cat<<"EOF"
             \                |       |           ,'   /
           ,' \               |  _.._ ,-..___,..-'    ,'
          /     .             .      `!             ,j'
-        /       `.          /        .           .'/  char mander[16] = { evolve: true };
+        /       `.          /        .           .'/ charmander[16] = { evolve: true }
 EOF
-echo 
+echo

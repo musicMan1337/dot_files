@@ -68,11 +68,15 @@ COMPLETION_WAITING_DOTS="true"
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git gitignore node nvm npm npx zsh-autosuggestions golang)
+plugins=(git gitignore node nvm npm npx zsh-autosuggestions golang docker docker-compose docker-machine postgres heroku)
 
 source $ZSH/oh-my-zsh.sh
 
 # User configuration
+
+# set DISPLAY variable to the IP automatically assigned to WSL2
+export DISPLAY=$(cat /etc/resolv.conf | grep nameserver | awk '{print $2; exit;}'):0.0
+sudo /etc/init.d/dbus start &> /dev/null
 
 # export MANPATH="/usr/local/man:$MANPATH"
 
