@@ -12,10 +12,6 @@ alias exp='explorer.exe .'
 alias herokuenv='heroku config:set $(cat .env.heroku | sed "/^$/d; /#[[:print:]]*$/d")'
 
 # NPM Stuff
-alias ieslint='npm install eslint -D'
-alias insass='npm install node-sass'
-alias isass='npm install sass sass-resources-loader'
-alias inyc='npm install nyc -D'
 alias start='npm start'
 alias dev='npm run dev'
 alias lint='npm run lint'
@@ -27,23 +23,11 @@ alias migrate='npm run migrate'
 alias migrate:test='npm run migrate:test'
 alias seed='npm run seed'
 
-# Node."$3"
-alias iexpress='npm install express'
-alias inodemon='npm install nodemon -D'
-alias imorgan='npm install morgan'
-alias idotenv='npm install dotenv'
-alias icors='npm install cors'
-alias ihelmet='npm install helmet'
-alias iexpresspacks='npm install express morgan dotenv cors helmet && npm install nodemon -D'
-alias imongoose='npm install mongoose'
-alias imocha='npm install mocha -D'
-alias ichai='npm install chai -D'
-alias isupertest='npm install supertest -D'
-alias inodetpacks='npm install -D mocha chai supertest nyc'
+# Node.js
 # ==> Database migrations/seeds <==
 # ex: <'cnm' or 'cnmjs'> [01] [table_name]
 cnm() { cd db/migrations ; touch "$1".do.create."$2".sql "$1".undo.create."$2".sql ; ... ;}
-cnmjs() { cd db/migrations ; touch "$1".do.create."$2"."$3" "$1".undo.create."$2"."$3" ; ... ;}
+cnmjs() { cd db/migrations ; touch "$1".do.create."$2".js "$1".undo.create."$2".js ; ... ;}
 cns() { cd db/seeds ; touch seed."$@".sql trunc."$@".sql ; ... ;}
 # ==> create Express boilerplate <==
 cnebrepo='https://github.com/musicMan1337/Express_Boilerplate.git'
@@ -78,24 +62,24 @@ alias imuis='npm install @material-ui/styles'
 alias imuipacks='npm install @material-ui/core @material-ui/icons @material-ui/styles'
 alias icountup='npm install react-countup'
 alias iclassnames='npm install classnames'
-alias ichartjs='npm install react-chartjs-2 chart."$3"'
+alias ichartjs='npm install react-chartjs-2 chart.js'
 
 # Format new React app using hereDocs
 # ==> STANDARD react structure <==
-snc() { touch src/"$@"."$3" ;}
-sncd() { mkdir src/"$@" ; touch src/"$@"/"$@"."$3" src/"$@"/"$@".test."$3" ;}
-sncb() { touch src/"$1"/"$2"."$3" src/"$1"/"$2".test."$3" ;}
+snc() { touch src/"$@".js ;}
+sncd() { mkdir src/"$@" ; touch src/"$@"/"$@".js src/"$@"/"$@".test.js ;}
+sncb() { touch src/"$1"/"$2".js src/"$1"/"$2".test.js ;}
 snhc() {
   if [[ ! -d src/hooks ]];
     then mkdir src/hooks src/hooks/Tests
-  fi && touch src/hooks/"$@"."$3" src/hooks/Tests/"$@".test."$3"
+  fi && touch src/hooks/"$@".js src/hooks/Tests/"$@".test.js
 ;}
 sncc() {
   if [[ ! -d src/components ]];
     then mkdir src/components src/components/Tests
-  fi && touch src/components/"$@"."$3" src/components/Tests/"$@".test."$3"
+  fi && touch src/components/"$@".js src/components/Tests/"$@".test.js
 ;}
-snccd() { mkdir src/components/"$1" && touch src/components/"$1"/"$2"."$3" src/components/"$1"/"$2".test."$3" ;}
+snccd() { mkdir src/components/"$1" && touch src/components/"$1"/"$2".js src/components/"$1"/"$2".test.js ;}
 # ==> create React:Standard boilerplate <==
 cnrsbrepo=''
 cnrsb() { git clone $cnepsqlbrepo "$@" && cd "$@" ; rm -rfv .git && npm install & mv dummy.env .env ;}
@@ -148,7 +132,7 @@ vnr() {
 # ==> create React:Verbose boilerplate <==
 cnrvbrepo='https://github.com/musicMan1337/React_Boilerplate.git'
 cnrvb() { npx degit $cnrvbrepo "$@" && cd "$@" ; git init && npm install ;}
-alias vrclean='setopt localoptions rmstarsilent && rm -rfv public/* src/* ; cd src ; mkdir components images helpers routes styles styles/mixins styles/variables ; touch components/index."$3" ; .. ; vnc app App ; rm src/components/index."$3" ; touch src/components/index."$3" ; mammothHead public/ && vrFileGenerator && vrcMessage'
+alias vrclean='setopt localoptions rmstarsilent && rm -rfv public/* src/* ; cd src ; mkdir components images helpers routes styles styles/mixins styles/variables ; touch components/index.js ; .. ; vnc app App ; rm src/components/index.js ; touch src/components/index.js ; mammothHead public/ && vrFileGenerator && vrcMessage'
 alias vrcMessage='/mnt/c/Users/admin/hereDocs/asciiArt/vrcMessage.txt'
 alias vrindexhtml='zsh /mnt/c/Users/admin/hereDocs/reactClean/verbose/indexhtml.txt'
 alias vrmanifestjson='zsh /mnt/c/Users/admin/hereDocs/reactClean/verbose/manifestjson.txt'
