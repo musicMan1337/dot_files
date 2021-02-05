@@ -213,6 +213,7 @@ alias zBashrc='cp ~/.bashrc .'
 alias zZshrc='cp ~/.zshrc .'
 alias zP10k='cp ~/.p10k.zsh .'
 # ==> VScode snippets <==
+alias keybindingsJson='cp /mnt/c/Users/admin/AppData/Roaming/Code/User/keybindings.json .'
 alias globalJson='cp /mnt/c/Users/admin/AppData/Roaming/Code/User/snippets/html-local.code-snippets .'
 alias htmlJson='cp /mnt/c/Users/admin/AppData/Roaming/Code/User/snippets/html.json .'
 alias jsJson='cp /mnt/c/Users/admin/AppData/Roaming/Code/User/snippets/javascript.json .'
@@ -237,7 +238,7 @@ snsupdate () {
   zScripts && zAliases ; zGitconfig ;
   bScripts && bAliases ; bGitconfig ;
   shellsrc && zBashrc ; zZshrc ; zP10k ;
-  vSnippets && globalJson ; htmlJson; jsJson ; scssJson ; jsonJson ; mdJson ;
+  vSnippets && keybindingsJson && globalJson ; htmlJson; jsJson ; scssJson ; jsonJson ; mdJson ;
   .. ; wtsettings && hDocs && git cm "$@" && git push
 }
 
