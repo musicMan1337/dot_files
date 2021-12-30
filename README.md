@@ -19,7 +19,7 @@
     <img src="images/8bit_mammoth_logo.png" alt="Logo" width="100" height="100">
   </a>
 
-  <h3 align="center">Snippets 'n' Aliases</h3>
+  <h3 align="center">My Personal "dot" Files</h3>
 
   <p align="center">
     My personal dumping ground for my secrets to optimal laziness!
