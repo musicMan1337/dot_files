@@ -1,7 +1,7 @@
->./index.js<<'EOS'
-import React from 'react';
-import ReactDOM from 'react-dom';
-import './styles/global.scss';
-import App from './App';
+#!/bin/sh
 
-ReactDOM.render(<App />, document.getElementById('root'))
+FOO='foo'
+cat << 'EOF' - -- arg1
+  $FOO
+  $arg1
+EOF
