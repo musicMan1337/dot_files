@@ -168,6 +168,8 @@ alias wsl_zAliases='cp ~/.oh-my-zsh/custom/aliases.zsh .'
 alias wsl_zGitconfig='cp ~/.gitconfig .'
 alias wsl_bAliases='cp /mnt/c/Users/admin/.bashrc .'
 alias wsl_bGitconfig='cp /mnt/c/Users/admin/.gitconfig .'
+alias wsl_bPurelinerc='cp /mnt/c/Users/admin/.pureline.conf .'
+alias wsl_bPureline='cp -r /mnt/c/Users/admin/pureline .'
 #? ==> shell .rc files <==
 alias wsl_zBashrc='cp ~/.bashrc .'
 alias wsl_zZshrc='cp ~/.zshrc .'
@@ -183,7 +185,7 @@ alias wsl_cdShellsrc='cd /mnt/c/Users/admin/CODE/dot_files/shellrc_Files'
 #! ==> mega updater <==
 snsupdate_wsl () {
   wsl_cdzScripts && wsl_zAliases ; wsl_zGitconfig ;
-  wsl_cdbScripts && wsl_bAliases ; wsl_bGitconfig ;
+  wsl_cdbScripts && wsl_bAliases ; wsl_bGitconfig ; wsl_bPurelinerc ; wsl_bPureline ;
   wsl_cdShellsrc && wsl_zBashrc ; wsl_zZshrc ; wsl_zP10k ;
   .. ; wsl_wtsettings && wsl_hDocs && git add . && git commit -m \'save\' && git push
 }
@@ -192,6 +194,8 @@ snsupdate_wsl () {
 #? ==> shell aliases <==
 alias win_bAliases='cp ~/.bashrc .'
 alias win_bGitconfig='cp ~/.gitconfig .'
+alias win_bPurelinerc='cp ~/.pureline.conf .'
+alias win_bPureline='cp -r ~/pureline .'
 #? ==> hereDocs <==
 alias win_hDocs='cp -r ~/hereDocs .'
 #? ==> windows terminal settings <==
@@ -202,8 +206,8 @@ alias win_cdbScripts='cd ~/CODE/dot_files/win10_bash_scripts'
 alias win_cdShellsrc='cd ~/CODE/dot_files/shellrc_Files'
 #! ==> mega updater <==
 snsupdate_win () {
-  win_cdbScripts && win_bAliases ; win_bGitconfig ;
-  .. ; win_wtsettings && win_hDocs && git add . && git commit -m \'save\' # && git push ;
+  win_cdbScripts && win_bAliases ; win_bGitconfig ; win_bPurelinerc ; win_bPureline ;
+  .. ; win_wtsettings && win_hDocs && git add . && git commit -m \'save\' && git push ;
 }
 
 #~ eBacon stuff
